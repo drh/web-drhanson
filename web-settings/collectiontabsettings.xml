@@ -19,54 +19,9 @@
 				<attribute name="url" value="images/Maylee.jpg"/>
 			</item>
 			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/baldy.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/baldy.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/baldy_chutes.htm"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="baldy_chutes.htm"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/baldy_small.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/baldy_small.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/baldyhike2_04.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/baldyhike2_04.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/baldyhike2_04_small1.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/baldyhike2_04_small1.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/baldyhike_04.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/baldyhike_04.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/baldyhike_04_small1.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/baldyhike_04_small1.jpg"/>
-			</item>
-			<item>
 				<attribute name="collectionUrl" value="siteEntry://collections/published-files/cameronskiing.mov"/>
 				<attribute name="isRelative" value="yes"/>
 				<attribute name="url" value="images/cameronskiing.mov"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/dave_04.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/dave_04.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/dave_04_small.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/dave_04_small.jpg"/>
 			</item>
 			<item>
 				<attribute name="collectionUrl" value="siteEntry://collections/published-files/dot_blue1.gif"/>
@@ -79,109 +34,9 @@
 				<attribute name="url" value="images/drh75x75.gif"/>
 			</item>
 			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/gene-dave_04.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/gene-dave_04.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/gene-dave_04_small.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/gene-dave_04_small.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/gene_04.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/gene_04.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/gene_04_small.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/gene_04_small.jpg"/>
-			</item>
-			<item>
 				<attribute name="collectionUrl" value="siteEntry://collections/published-files/index1.html"/>
 				<attribute name="isRelative" value="yes"/>
 				<attribute name="url" value="index.html"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/joni-bev_04.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/joni-bev_04.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/joni-bev_04_small.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/joni-bev_04_small.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/mainchute.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/mainchute.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/mainchute_04.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/mainchute_04.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/mainchute_04_small1.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/mainchute_04_small1.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/mainchute_small.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/mainchute_small.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/mainchutebottom.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/mainchutebottom.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/mainchutebottom_small.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/mainchutebottom_small.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/mainchutefromtop_04.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/mainchutefromtop_04.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/mainchutefromtop_04_small.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/mainchutefromtop_04_small.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/mainchutemiddle.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/mainchutemiddle.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/mainchutemiddle_small.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/mainchutemiddle_small.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/mainchutetop.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/mainchutetop.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/mainchutetop_small.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/mainchutetop_small.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/paul_04.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/paul_04.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/paul_04_small.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/paul_04_small.jpg"/>
 			</item>
 			<item>
 				<attribute name="collectionUrl" value="siteEntry://collections/published-files/tioga.htm"/>
