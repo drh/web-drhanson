@@ -151,8 +151,18 @@
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
-				<attribute name="externalUrl" value="http://www.blarg.net/%257edrh/WoodWorking/"/>
-				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/blarg-WoodWorking"/>
+				<attribute name="externalUrl" value="http://www.drhanson.net/"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/drhanson"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.drhanson.net/WoodWorking/"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/drhanson-WoodWorking"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://drh.home.dyndns.org/"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/drhanson-work"/>
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
@@ -181,6 +191,11 @@
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
+				<attribute name="externalUrl" value="http://www.keyserver.net"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/keyserver"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
 				<attribute name="externalUrl" value="http://www.lugaru.com"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/lugaru"/>
 				<attribute name="urlParams" value=""/>
@@ -193,11 +208,6 @@
 			<item>
 				<attribute name="externalUrl" value="http://www.mayleenoah.net/photoalbums/Skiing/album.htm"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/mayleenoah-album.htm"/>
-				<attribute name="urlParams" value=""/>
-			</item>
-			<item>
-				<attribute name="externalUrl" value="http://www.research.microsoft.com/%257edrh/"/>
-				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/microsoft-%257edrh"/>
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
@@ -223,6 +233,11 @@
 			<item>
 				<attribute name="externalUrl" value="http://office.microsoft.com/visio"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/microsoft-visio"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://pgp.mit.edu"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/mit"/>
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
