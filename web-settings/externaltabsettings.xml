@@ -11,7 +11,142 @@
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/"/>
 			</item>
 			<item>
-				<attribute name="externalUrl" value="http://www.blarg.net/%257eeln/"/>
+				<attribute name="externalUrl" value="http://www.adessosystems.com/PageLoad.aspx/for_you"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/adessosystems-for_you"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.adobe.com/products/acrobatpro"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/adobe-acrobatpro"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.adobe.com/products/framemaker"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/adobe-framemaker"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.adobe.com/products/golive"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/adobe-golive"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.adobe.com/products/photoshop"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/adobe-photoshop"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0133708756/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-20"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0135904641/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-21"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/020103669X/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-22"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0201100886/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-23"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0201314525/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-24"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/020137921X/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-25"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0201485419/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-26"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/020161586X/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-27"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0201657880/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-28"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/020530902X/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-29"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0226104036/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-30"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0262700654/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-31"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0375754741/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-32"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0521431085/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-33"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0961392118/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-34"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0961392126/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-35"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/0961392142/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-36"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/1556155514/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-37"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/1558605967/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-38"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/1573980013/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-39"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.amazon.com/exec/obidos/ASIN/1573980137/lccaretargcco-20"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/amazon-lccaretargcco-40"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.cs.arizona.edu/icon"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/arizona-icon"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.mayleenoah.net/"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/blarg-%257eeln"/>
 				<attribute name="urlParams" value=""/>
 			</item>
@@ -21,8 +156,33 @@
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
+				<attribute name="externalUrl" value="http://www.ghostscript.com"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/ghostscript"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.gnu.org/software/emacs"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/gnu-emacs"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://pagead2.googlesyndication.com/pagead/show_ads.js"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/googlesyndication-show_ads.js"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.ipswitch.com/products/ws_ftp"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/ipswitch-ws_ftp"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
 				<attribute name="externalUrl" value="http://www.johnrellis.com"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/johnrellis"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.lugaru.com"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/lugaru"/>
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
@@ -41,6 +201,36 @@
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
+				<attribute name="externalUrl" value="http://www.microsoft.com/windowsxp/using/mobility/default.mspx"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/microsoft-default.mspx"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://office.microsoft.com/frontpage"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/microsoft-frontpage"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.microsoft.com/mac/otherproducts/otherproducts.aspx"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/microsoft-otherproducts.aspx"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.microsoft.com/virtualpc"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/microsoft-virtualpc"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://office.microsoft.com/visio"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/microsoft-visio"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.moneydance.com"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/moneydance"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
 				<attribute name="externalUrl" value="http://www.ofoto.com/BrowsePhotos.jsp"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/ofoto-BrowsePhotos.jsp"/>
 				<attribute name="urlParams" value=""/>
@@ -48,6 +238,16 @@
 			<item>
 				<attribute name="externalUrl" value="http://www.skimaps.com/"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/skimaps"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://subversion.tigris.org"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/tigris"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.vandyke.com/download/securecrt"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/vandyke-securecrt"/>
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
@@ -61,8 +261,18 @@
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
-				<attribute name="externalUrl" value="http://f2.pg.photos.yahoo.com/ph/drh98052/album"/>
+				<attribute name="externalUrl" value="http://www.winzip.com"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/winzip"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://pg.photos.yahoo.com/ph/drh98052/album"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/yahoo-album"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.yandy.com"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/yandy"/>
 				<attribute name="urlParams" value=""/>
 			</item>
 		</list>
