@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sitesettings SYSTEM "sitesettings.dtd">
+<!--Adobe GoLive settings file-->
+<sitesettings section="externaltab" version="1.0">
+	<attributes>
+		<attribute name="dataVersion" value="1"/>
+		<list name="entries">
+			<item>
+				<attribute name="folderType" value="7"/>
+				<attribute name="unfolded" value="yes"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/"/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.blarg.net/%257eeln/"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/blarg-%257eeln"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.blarg.net/%257edrh/WoodWorking/"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/blarg-WoodWorking"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.johnrellis.com"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/johnrellis"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.mayleenoah.net/"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/mayleenoah"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.mayleenoah.net/photoalbums/Skiing/album.htm"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/mayleenoah-album.htm"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.research.microsoft.com/%257edrh/"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/microsoft-%257edrh"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.ofoto.com/BrowsePhotos.jsp"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/ofoto-BrowsePhotos.jsp"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.skimaps.com/"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/skimaps"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.whistler-blackcomb.com/"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/whistler-blackcomb"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.whistler-blackcomb.com/mountain/maps/index.asp"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/whistler-blackcomb-index.asp"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://f2.pg.photos.yahoo.com/ph/drh98052/album"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/yahoo-album"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+		</list>
+	</attributes>
+</sitesettings>
