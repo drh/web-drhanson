@@ -25,14 +25,14 @@ function getREQUEST($key, $default=NULL) {
 
 # returns $val if it's not empty, or $default otherwise
 function value($val, $default="") {
-		return empty($val) ? $default : $val;
+	return empty($val) ? $default : $val;
 }
 
-// returns <a href="htmlentities($url)">$text</a>
+# returns <a href="htmlentities($url)">$text</a>
 function html_link($url, $text) {
-		if (empty($url)) return $text;
-		return '<a href="' . htmlentities($url) . '"' . ">$text</a>";
-	}
+	if (empty($url)) return $text;
+	return '<a href="' . htmlentities($url) . '"' . ">$text</a>";
+}
 
 $PHP_SELF = getElement($_SERVER, "SCRIPT_NAME");
 $REQUEST_METHOD = getElement($_SERVER, "REQUEST_METHOD");
