@@ -79,16 +79,15 @@ if ($REQUEST_METHOD == 'POST') {
 	}
 }
 
+$labels = new Labels($db);
 if ($q_action == "delete" && $q_id > 0) {		// handle delete commands
 	$q = $db->query("DELETE items FROM items WHERE id=$q_id");
 	if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
-	$q = $db->query("DELETE labelmap FROM labelmap WHERE itemId=$q_id");
-	if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
+	$labels->deleteItemId($q_id);
 	$q_action = NULL;
 }
 
 // issue the queries
-$labels = new Labels($db);
 $vals = array();
 $sql = 'SELECT id,name,name,login,password,url,owner,notes';
 if (!empty($q_label)) {
@@ -153,6 +152,8 @@ $table->setHeaderContents(0, 1, "Login");
 $table->setHeaderContents(0, 2, "Password");
 $table->setHeaderContents(0, 3, "Owner");
 $table->setHeaderContents(0, 4, "Number");
+$table->setCellContents(0, 6, html_link('/accounts/editlabels.php?url=' . urlencode("$PHP_SELF?owner=$q_owner&label=$q_label"), 'Edit Labels'));
+$table->setCellAttributes(0, 6, array('align' => 'right'));
 $table->setCellContents(1, 0, html_link("$PHP_SELF", 'All'));
 $table->setCellContents(1, 3, html_link("$PHP_SELF?owner=&label=$q_label", 'All'));
 $table->setCellContents(1, 6, html_link("$PHP_SELF?owner=$q_owner&label=", 'All'));
