@@ -7,69 +7,80 @@
 
 <body>
 <?php
-require_once("util.php");
-require_once("DB.php");
-require_once("HTML/Table.php");
-require_once("HTML/QuickForm.php");
+require_once('util.php');
+require_once('labels.php');
+require_once('DB.php');
+require_once('HTML/Table.php');
+require_once('HTML/QuickForm.php');
 require_once('./dsn.php');
 
 // connect
 $db = DB::connect($dsn);
 if (DB::iserror($db)) die(__FILE__ . '.' . __LINE__ . ': ' . $db->getMessage());
 
-$search_form = new HTML_QuickForm('Search', 'get');
-foreach (array('house', 'room', 'label') as $key) {
-	$group[] =& HTML_QuickForm::createElement('text', $key, ucfirst($key),
-										array('size' => 20, 'maxlength' => 20));
+function &buildForm() {
+	$form = new HTML_QuickForm('Search', 'get');
+	foreach (array('house', 'room', 'label') as $key) {
+		$group[] =& HTML_QuickForm::createElement('static', NULL, NULL, ucfirst($key) . ':');
+		$group[] =& HTML_QuickForm::createElement('text', $key, ucfirst($key),
+											array('size' => 20, 'maxlength' => 20));
+	}
+	$group[] =& HTML_QuickForm::createElement('submit', 'submit', 'Search');
+	$group[] =& HTML_QuickForm::createElement('submit', 'submit', 'Clear');
+	$form->addGroup($group);
+	$form->addElement('hidden', 'id', 0);
+	$form->addElement('hidden', 'deb', 0);
+	$form->applyFilter('__ALL__', 'trim');
+	$form->addRule('submit', '', 'regex', '/^(Search|Clear)$/');
+	return $form;
 }
-$group[] =& HTML_QuickForm::createElement('submit', 'submit', 'Search');
-$group[] =& HTML_QuickForm::createElement('submit', 'submit', 'Clear');
-$search_form->addGroup($group);
-$search_form->addElement('hidden', 'id', 0);
-$search_form->addElement('hidden', 'deb', 0);
-$search_form->applyFilter('__ALL__', 'trim');
-$search_form->addRule('submit', '', 'regex', '/^(Search|Clear)$/');
 
+$labels = new Labels($db);
 $q_id = $q_deb = 0;
-$q_submit = $q_action = $q_house = $q_room = $q_label = null;	
-extract($_GET, EXTR_PREFIX_ALL, 'q');
+$q_submit = $q_action = $q_house = $q_room = $q_label = null;
+$form =& buildForm();
+if ($form->validate()) {
+	extract($form->getSubmitValues(), EXTR_PREFIX_ALL, 'q');
+	$q_deb > 0 && var_dump($_GET);
+	if ($q_submit == 'Clear') {
+		$_GET = NULL;
+		$form =& buildForm();
+	}
+}
 
-if ($q_submit == 'Clear')
-	$search_form->setDefaults(array('__ALL__' => null));
-if ($q_deb > 0)
-	$search_form->setDefaults(array('deb' => $q_deb));
-$search_form->display();
-$q_deb > 0 && var_dump($_GET);
+echo html_link('/inventory/editlabels.php?url='
+	. urlencode("$PHP_SELF?house=$q_house&room=$q_room&label=$q_label"), 'Edit Labels')
+	. '&nbsp;&nbsp;'
+	. html_link('/inventory/editlocations.php?cont='
+	. urlencode("$PHP_SELF?house=$q_house&room=$q_room&label=$q_label"), 'Edit Locations');
+$form->display();
 
-if ($q_action == 'delete' && $q_id > 0) {
-	$sql = "DELETE items, labelmap, itemmap
-					FROM items, labelmap, itemmap
-					WHERE items.id=$q_id AND labelmap.itemId=$q_id
-						AND itemmap.itemId=$q_id";
-	$q_deb > 0 && var_dump($sql);
-	$q = $db->query($sql);
+if ($q_action == 'Delete' && $q_id > 0) {
+	$q = $db->query("DELETE items FROM items WHERE items.id=$q_id");
 	if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
-	$q_action = NULL;
+	$labels->deleteItemId($q_id);
 }
 
 // build and issue the query
+$vals = array();
 $sql = 'SELECT items.id,name,description,itemmap.quantity,
 		locations.house,locations.room,manufacturer,model,sn,retailer,
 		purchased,price,url,dimensions,artist,url,notes
-	FROM items, itemmap, locations
-	WHERE items.id=itemmap.itemId and itemmap.roomId=locations.id';
-$vals = array();
+	FROM items, itemmap, locations';
+if (!empty($q_label)) {
+	$sql .= ', labelmap
+		WHERE items.id=labelmap.itemId AND labelmap.labelId=?';
+	$vals[] = $labels->getLabelId($q_label, 0);
+} else
+	$sql .= ' WHERE 1=1';	
+$sql .= ' AND items.id=itemmap.itemId AND itemmap.roomId=locations.id';
 if (!empty($q_house)) {
-	$sql .= ' and locations.house=?';
+	$sql .= ' AND locations.house=?';
 	$vals[] = $q_house;
 }
 if (!empty($q_room)) {
-	$sql .= ' and locations.room=?';
+	$sql .= ' AND locations.room=?';
 	$vals[] = $q_room;
-}
-if (!empty($q_label)) {
-	$sql .= ' and labels.label=?';
-	$vals[] = $q_label;
 }
 $sql .= 
 	' ORDER BY name ASC';
@@ -80,24 +91,35 @@ if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
 
 // generate the tables
 echo $q->numRows() . ' items<hr>';
+$attrs = array('class' => 'label');
+$url = urlencode("$PHP_SELF?house=$q_house&room=$q_room&label=$q_label");
 while ($status = $q->fetchInto($row, DB_FETCHMODE_ASSOC)) {
 	if (DB::iserror($status)) die(__FILE__ . '.' . __LINE__ . ': ' . $status->getMessage());
-	$table = new HTML_Table(array("border" => 0, "rules" => "groups"));
-	$table -> setAutoGrow(true);
-	$table -> setAutoFill("");
+	$table = new HTML_Table(array('border' => 0));
+	$table->setAutoGrow(true);
+	$table->setAutoFill('');
 	$table->setCellContents(0, 0,
-		html_link("edititem.php?id="	 . $row['id'], "Edit") . ' ' .
-		html_link("$PHP_SELF?action=delete&id=" . $row['id'], "Delete"));
-	$table->setCellAttributes(0, 0, array("class" => "actions"));
-	$attrs = array("class" => "label");
+		html_link("edititem.php?id=" . $row['id'] . '&cont=' . $url, 'Edit') . ' ' .
+		html_link("$PHP_SELF?id=" . $row['id'] . '&action=delete', 'Delete'));
+	$table->setCellAttributes(0, 0, array('class' => 'actions'));
 	$i = 1;
 	foreach ($row as $k => $v) {
 		$table->setCellContents($i, 0, ucfirst($k) . ':&nbsp;');
 		$table->setCellAttributes($i, 0, $attrs);
-		if (!empty($v))
-			$table->setCellContents($i, 1, $v);
+		if ($k == 'house')
+			$v = html_link("$PHP_SELF?house=$v&label=$q_label&room=$q_room", $v);
+		else if ($k == 'room')
+			$v = html_link("$PHP_SELF?house=$q_house&label=$q_label&room=$v", $v);
+		$table->setCellContents($i, 1, $v);
 		$i++;
 	}
+	$table->setCellContents($i, 0, 'Labels:&nbsp;');
+	$table->setCellAttributes($i, 0, $attrs);
+	$str = '';
+	foreach ($labels->getLabelsForItemId($row['id']) as $lab)
+		if ($lab != $q_label)
+			$str .= ' ' . html_link("$PHP_SELF?label=$lab&room=$q_room&house=$q_house", $lab);
+	$table->setCellContents($i, 1, $str);
 	echo $table->toHTML();
 	echo "<hr>\n";
 }

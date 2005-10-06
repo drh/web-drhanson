@@ -19,6 +19,11 @@ require_once('HTML/Table.php');
 require_once('HTML/QuickForm.php');
 require_once('./dsn.php');
 
+// connect, fetch labels
+$db = DB::connect($dsn);
+if (DB::iserror($db)) die(__FILE__ . '.' . __LINE__ . ': ' . $db->getMessage());
+$labels = new Labels($db);
+
 $q_id = $q_deb = 0;
 $q_submit = $q_action = $q_owner = $q_label = null;	
 extract($_GET, EXTR_PREFIX_ALL, 'q');
@@ -29,6 +34,13 @@ foreach (array('name' => 35, 'url' => 100, 'number' => 20, 'login' => 25,
 	$form->addElement('text', $key, ucfirst($key),
 										array('size' => 30, 'maxlength' => $maxlen));
 	$form->applyFilter($key, 'trim');
+}
+$e =& $form->addElement('select', 'labels', 'Labels', $labels->getLabels(), array('multiple'));
+if ($q_id > 0) {
+	$sel = array();
+	foreach ($labels->getLabelsForItemId($q_id) as $lab)
+		$sel[] = $labels->getLabelId($lab);
+	$e->setSelected($sel);
 }
 $form->addElement('textarea', 'notes', 'Notes', array("cols" => 29, "rows" => 3));
 $buttons[] =& HTML_QuickForm::createElement('submit', 'submit', 'Update');
@@ -62,9 +74,6 @@ function Update(&$values) {
 					WHERE id=' . $values['id'];
 }
 
-// connect
-$db = DB::connect($dsn);
-if (DB::iserror($db)) die(__FILE__ . '.' . __LINE__ . ': ' . $db->getMessage());
 
 if ($REQUEST_METHOD == 'POST') {
 	$q_deb = $form->exportValue('deb');
@@ -79,7 +88,6 @@ if ($REQUEST_METHOD == 'POST') {
 	}
 }
 
-$labels = new Labels($db);
 if ($q_action == "delete" && $q_id > 0) {		// handle delete commands
 	$q = $db->query("DELETE items FROM items WHERE id=$q_id");
 	if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());

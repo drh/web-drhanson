@@ -1,3 +1,4 @@
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
 <?php
 require_once('util.php');
 require_once('labels.php');
@@ -86,4 +87,3 @@ if (!empty($q_url)) {
 	echo html_link(urldecode($q_url), 'Back to main page');
 }
 ?>
-
