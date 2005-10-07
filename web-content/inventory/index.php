@@ -36,6 +36,7 @@ function &buildForm() {
 }
 
 $labels = new Labels($db);
+$locations = new Labels($db, 'itemmap', 'locations');
 $q_id = $q_deb = 0;
 $q_submit = $q_action = $q_house = $q_room = $q_label = null;
 $form =& buildForm();
@@ -51,7 +52,7 @@ if ($form->validate()) {
 echo html_link('/inventory/editlabels.php?url='
 	. urlencode("$PHP_SELF?house=$q_house&room=$q_room&label=$q_label"), 'Edit Labels')
 	. '&nbsp;&nbsp;'
-	. html_link('/inventory/editlocations.php?cont='
+	. html_link('/inventory/editlocations.php?url='
 	. urlencode("$PHP_SELF?house=$q_house&room=$q_room&label=$q_label"), 'Edit Locations');
 $form->display();
 
@@ -59,12 +60,13 @@ if ($q_action == 'Delete' && $q_id > 0) {
 	$q = $db->query("DELETE items FROM items WHERE items.id=$q_id");
 	if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
 	$labels->deleteItemId($q_id);
+	$locations->deleteItemId($q_id);
 }
 
 // build and issue the query
 $vals = array();
-$sql = 'SELECT items.id,name,description,itemmap.quantity,
-		locations.house,locations.room,manufacturer,model,sn,retailer,
+$sql = 'SELECT items.id,name,description,quantity,
+		locations.label as location,manufacturer,model,sn,retailer,
 		purchased,price,url,dimensions,artist,url,notes
 	FROM items, itemmap, locations';
 if (!empty($q_label)) {
@@ -73,14 +75,14 @@ if (!empty($q_label)) {
 	$vals[] = $labels->getLabelId($q_label, 0);
 } else
 	$sql .= ' WHERE 1=1';	
-$sql .= ' AND items.id=itemmap.itemId AND itemmap.roomId=locations.id';
+$sql .= ' AND items.id=itemmap.itemId AND itemmap.labelId=locations.id';
 if (!empty($q_house)) {
-	$sql .= ' AND locations.house=?';
-	$vals[] = $q_house;
+	$sql .= ' AND locations.label LIKE ?';
+	$vals[] = $q_house . ':%';
 }
 if (!empty($q_room)) {
-	$sql .= ' AND locations.room=?';
-	$vals[] = $q_room;
+	$sql .= ' AND locations.label LIKE ?';
+	$vals[] = '%:' . $q_room;
 }
 $sql .= 
 	' ORDER BY name ASC';
@@ -106,10 +108,12 @@ while ($status = $q->fetchInto($row, DB_FETCHMODE_ASSOC)) {
 	foreach ($row as $k => $v) {
 		$table->setCellContents($i, 0, ucfirst($k) . ':&nbsp;');
 		$table->setCellAttributes($i, 0, $attrs);
-		if ($k == 'house')
-			$v = html_link("$PHP_SELF?house=$v&label=$q_label&room=$q_room", $v);
-		else if ($k == 'room')
-			$v = html_link("$PHP_SELF?house=$q_house&label=$q_label&room=$v", $v);
+		if ($k == 'location') {
+			$loc = explode(':', $v, 2);
+			$v = html_link("$PHP_SELF?house=$loc[0]&label=$q_label&room=$q_room", $loc[0]);
+			if ($loc[1])
+				$v .= ':' . html_link("$PHP_SELF?house=$q_house&label=$q_label&room=$loc[1]", $loc[1]);
+		}
 		$table->setCellContents($i, 1, $v);
 		$i++;
 	}

@@ -36,12 +36,8 @@ foreach (array('name' => 35, 'url' => 100, 'number' => 20, 'login' => 25,
 	$form->applyFilter($key, 'trim');
 }
 $e =& $form->addElement('select', 'labels', 'Labels', $labels->getLabels(), array('multiple'));
-if ($q_id > 0) {
-	$sel = array();
-	foreach ($labels->getLabelsForItemId($q_id) as $lab)
-		$sel[] = $labels->getLabelId($lab);
-	$e->setSelected($sel);
-}
+if ($q_id > 0)
+	$e->setSelected(array_keys($labels->getLabelsForItemId($q_id)));
 $form->addElement('textarea', 'notes', 'Notes', array("cols" => 29, "rows" => 3));
 $buttons[] =& HTML_QuickForm::createElement('submit', 'submit', 'Update');
 $buttons[] =& HTML_QuickForm::createElement('submit', 'submit', 'Add');
@@ -55,12 +51,15 @@ $form->addRule('owner', 'Owner is required', 'required');
 $form->addRule('submit', '', 'regex', '/^(Update|Add|Cancel)$/');
 
 function processData(&$values) {
-	global $db;
+	global $db, $labels;
 	extract($values, EXTR_PREFIX_ALL, '');
 	$sql = $_submit($values);
 	$q = $db->query($sql, array($_name, $_number, $_owner, $_login,
 															$_password, $_url, $_notes));
 	if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
+	if (empty($_labels))
+		$_labels = array();
+	$labels->updateLabelsForItemId($_id, $_labels);
 }
 
 function Add(&$values) {
@@ -69,7 +68,7 @@ function Add(&$values) {
 }
 
 function Update(&$values) {
-	return 'UPDATE items
+  return 'UPDATE items
 					SET name=?,number=?,owner=?,login=?,password=?,url=?,notes=?
 					WHERE id=' . $values['id'];
 }
@@ -144,7 +143,7 @@ function fillRow($i, &$row, &$table) {
 																 html_link("$PHP_SELF?id=$_id&action=delete&label=$q_label&owner=$q_owner", 'Del'));
 	$table->setCellAttributes($i, 5, array('class' => 'actions'));
 	$str = '';
-	foreach ($labels->getLabelsForItemId($_id) as $lab)
+	foreach ($labels->getLabelsForItemId($_id) as $id => $lab)
 		if ($lab != $q_label)
 			$str .= ' ' . html_link("$PHP_SELF?label=$lab&owner=$q_owner", $lab);
 	$table->setCellContents($i, 6, $str);

@@ -81,9 +81,9 @@ function doAdd(&$values, &$labels) {
 	echo $labels->addLabel($newlabel);
 	return True;
 }
-
+if (!empty($q_url))
+	echo '<p>', html_link(urldecode($q_url), 'Back to main page'), '</p>';
 $form->display();
-if (!empty($q_url)) {
-	echo html_link(urldecode($q_url), 'Back to main page');
-}
+if (!empty($q_url))
+	echo '<p>', html_link(urldecode($q_url), 'Back to main page'), '</p>';
 ?>
