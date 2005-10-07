@@ -114,14 +114,12 @@ class Labels {
 		$id = $this->getLabelId($label);
 		if (empty($id))
 			return $default;
-		$q = $this->dbh->query("SELECT itemId
-														FROM $this->labelmap,$this->labels
-														WHERE label=?", array($label));
+		$q = $this->dbh->query("SELECT itemId FROM $this->labelmap WHERE labelId=$id");
 		if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
 		$result = array();
-		while ($status = $q->fetchInto($row, DB_FETCHMODE_ORDERED)) {
+		while ($status = $q->fetchInto($row, DB_FETCHMODE_OBJECT)) {
 			if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
-			$result[] = (int)$row[0];
+			$result[] = (int)$row->itemID;
 		}
 		return $result;
 	}

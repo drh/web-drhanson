@@ -12,12 +12,22 @@ extract($_GET, EXTR_PREFIX_ALL, 'q');
 function buildForm(&$labels) {
 	global $q_url, $q_deb;
 	$form = new HTML_QuickForm('labels', 'post', '', '_self', NULL, True);
-	foreach ($labels->getLabels() as $id => $lab) {
-		$group[1] =& HTML_QuickForm::createElement('checkbox', "ids[$id]");
-		$group[2] =& HTML_QuickForm::createElement('text', $id, '');
-		$group[2]->setValue($lab);
+	$q = $labels->dbh->query("SELECT id,label,COUNT(labelId) AS count
+		FROM $labels->labels LEFT JOIN $labels->labelmap ON id=labelId GROUP BY labelId
+		ORDER BY label");
+	if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
+	while ($status = $q->fetchInto($row, DB_FETCHMODE_OBJECT)) {
+		if (DB::iserror($status)) die(__FILE__ . '.' . __LINE__ . ': ' . $status->getMessage());
+		$group[1] =& HTML_QuickForm::createElement('checkbox', "ids[$row->id]");
+		$group[2] =& HTML_QuickForm::createElement('text', $row->id, '');
+		$group[2]->setValue($row->label);
+		$group[3] =& HTML_QuickForm::createElement('static', '', '',
+			'<small>(' . $row->count . ' items)</small>');
+		$group[4] =& HTML_QuickForm::createElement('hidden', "count[$row->id]", $row->count);
 		$form->addGroup($group, null);
 	}
+	unset($group[3]);
+	unset($group[4]);
 	$group[1] =& HTML_QuickForm::createElement('submit', 'submit', 'Delete');
 	$group[2] =& HTML_QuickForm::createElement('submit', 'submit', 'Rename');
 	$form->addGroup($group, null);
@@ -47,7 +57,7 @@ if ($form->validate()) {
 function doDelete(&$values, &$labels) {
 	foreach ($values['ids'] as $id => $flag)
 		if ($flag)
-			echo $labels->deleteLabelById($id);
+			$labels->deleteLabelById($id);
 	return True;
 }
 
@@ -78,7 +88,6 @@ function doAdd(&$values, &$labels) {
 		echo "$newlabel already exists";
 		return False;
 	}
-	echo $labels->addLabel($newlabel);
 	return True;
 }
 if (!empty($q_url))

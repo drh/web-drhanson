@@ -23,7 +23,6 @@ require_once('./dsn.php');
 $db = DB::connect($dsn);
 if (DB::iserror($db)) die(__FILE__ . '.' . __LINE__ . ': ' . $db->getMessage());
 $labels = new Labels($db);
-
 $q_id = $q_deb = 0;
 $q_submit = $q_action = $q_owner = $q_label = null;	
 extract($_GET, EXTR_PREFIX_ALL, 'q');
@@ -53,26 +52,22 @@ $form->addRule('submit', '', 'regex', '/^(Update|Add|Cancel)$/');
 function processData(&$values) {
 	global $db, $labels;
 	extract($values, EXTR_PREFIX_ALL, '');
-	$sql = $_submit($values);
-	$q = $db->query($sql, array($_name, $_number, $_owner, $_login,
-															$_password, $_url, $_notes));
-	if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
+	$vals = array($_name, $_number, $_owner, $_login, $_password, $_url, $_notes);
+	if ($_submit == 'Add') {
+		$q = $db->query('INSERT items
+			SET name=?,number=?,owner=?,login=?,password=?,url=?,notes=?', $vals);
+		if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
+		$_id = $db->getone('SELECT LAST_INSERT_ID()');
+	} else {	// 'Update'
+		$q = $db->query('UPDATE items
+			SET name=?,number=?,owner=?,login=?,password=?,url=?,notes=?
+			WHERE id=' . $values['id'], $vals);
+		if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
+	}
 	if (empty($_labels))
 		$_labels = array();
 	$labels->updateLabelsForItemId($_id, $_labels);
 }
-
-function Add(&$values) {
-	return 'INSERT items
-					SET name=?,number=?,owner=?,login=?,password=?,url=?,notes=?';
-}
-
-function Update(&$values) {
-  return 'UPDATE items
-					SET name=?,number=?,owner=?,login=?,password=?,url=?,notes=?
-					WHERE id=' . $values['id'];
-}
-
 
 if ($REQUEST_METHOD == 'POST') {
 	$q_deb = $form->exportValue('deb');
