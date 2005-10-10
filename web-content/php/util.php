@@ -1,6 +1,14 @@
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
 <?php
 
+# dumps var=value inside a <pre> ... </pre> block.
+function pre_var_dump(&$value, $var='') {
+	echo '<pre>';
+	if (!empty($var)) echo $var, '=';
+	var_dump($value);
+	echo '</pre>';
+}
+
 # returns $array[$index], if it exists, or $default otherwise
 function getElement($array, $index, $default=NULL) {
 	if (array_key_exists($index, $array))

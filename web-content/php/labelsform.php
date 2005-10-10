@@ -9,11 +9,12 @@ $q_url = null;
 $q_deb = 0;
 extract($_GET, EXTR_PREFIX_ALL, 'q');
 
-function buildForm(&$labels) {
-	global $q_url, $q_deb;
+function &buildForm(&$labels) {
+	global $q_url, $q_deb, $counts;
 	$form = new HTML_QuickForm('labels', 'post', '', '_self', NULL, True);
 	$q = $labels->dbh->query("SELECT id,label,COUNT(labelId) AS count
-		FROM $labels->labels LEFT JOIN $labels->labelmap ON id=labelId GROUP BY labelId
+		FROM $labels->labels LEFT JOIN $labels->labelmap ON id=labelId
+		GROUP BY label,labelId
 		ORDER BY label");
 	if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
 	while ($status = $q->fetchInto($row, DB_FETCHMODE_OBJECT)) {
@@ -21,6 +22,7 @@ function buildForm(&$labels) {
 		$group[1] =& HTML_QuickForm::createElement('checkbox', "ids[$row->id]");
 		$group[2] =& HTML_QuickForm::createElement('text', $row->id, '');
 		$group[2]->setValue($row->label);
+		$counts[$row->id] = $row->count;
 		$group[3] =& HTML_QuickForm::createElement('static', '', '',
 			'<small>(' . $row->count . ' items)</small>');
 		$group[4] =& HTML_QuickForm::createElement('hidden', "count[$row->id]", $row->count);
@@ -55,27 +57,40 @@ if ($form->validate()) {
 }
 
 function doDelete(&$values, &$labels) {
-	foreach ($values['ids'] as $id => $flag)
-		if ($flag)
-			$labels->deleteLabelById($id);
+	global $counts;
+	if (function_exists('delete_condition')) {
+		$n = 0;
+		foreach ($values['ids'] as $id => $flag) {
+			assert($flag);
+			if (!delete_condition($id, $counts[$id]))
+				$n++;
+		}
+		if ($n > 0)
+			return False;
+	}
+	foreach ($values['ids'] as $id => $flag) {
+		assert($flag);
+		$labels->deleteLabelById($id);
+	}
 	return True;
 }
 
 function doRename(&$values, &$labels) {
 	$n = 0;
-	foreach ($values['ids'] as $id => $flag)
-		if ($flag && empty($values[$id])) {
+	foreach ($values['ids'] as $id => $flag) {
+		assert($flag);
+		if (empty($values[$id])) {
 			echo 'New label name for ' . $labels->getLabel($id) . ' must be nonempty<br>';
 			$n++;
-		} elseif ($flag && $labels->getLabelId($values[$id])) {
+		} elseif ($labels->getLabelId($values[$id])) {
 			echo 'New label name for ' . $labels->getLabel($id) . ' must be unique<br>';
 			$n++;
 		}
+	}
 	if ($n > 0)
 		return False;
 	foreach ($values['ids'] as $id => $flag)
-		if ($flag)
-			$labels->renameLabelById($id, $values[$id]);
+		$labels->renameLabelById($id, $values[$id]);
 	return True;
 }
 
@@ -87,7 +102,8 @@ function doAdd(&$values, &$labels) {
 	} elseif ($labels->getLabelId($newlabel)) {
 		echo "$newlabel already exists";
 		return False;
-	}
+	} else
+		$labels->addLabel($newlabel);
 	return True;
 }
 if (!empty($q_url))

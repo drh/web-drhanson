@@ -209,6 +209,8 @@ class Labels {
 	 */
 	function updateLabelsForItemId($itemId, &$labelIds) {
 		$cur = array_keys($this->getLabelsForItemId($itemId));
+		if (empty($labelIds))
+			$labelIds = array();
 		foreach (array_diff($cur, $labelIds) as $id)
 			$this->removeLabelById($itemId, $id);
 		foreach (array_diff($labelIds, $cur) as $id)

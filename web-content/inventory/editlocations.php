@@ -12,5 +12,14 @@ $db = DB::connect($dsn);
 if (DB::iserror($db)) die(__FILE__ . '.' . __LINE__ . ': ' . $db->getMessage());
 $labels = new Labels($db, 'itemmap', 'locations');
 
+function delete_condition($id, $count) {
+	global $labels;
+	if ($count > 0) {
+		echo 'Cannot delete ', $labels->getLabel($id), " because $count items refer to it<br>";
+		return False;
+	}
+	return True;
+}
+
 require('labelsform.php')
 ?>
