@@ -116,11 +116,10 @@ function processData(&$values) {
 	$sql = 'SET name=?';
 	$vals = array($values['name']);
 	foreach (array('description','quantity','manufacturer','model','sn','price',
-								 'retailer', 'url','dimensions','artist','year') as $k)
-		if (!empty($values[$k])) {
-			$sql .= ",$k=?";
-			$vals[] = $values[$k];
-		}
+								 'retailer', 'url','dimensions','artist','year','notes') as $k) {
+		$sql .= ",$k=?";
+		$vals[] = empty($values[$k]) ? NULL : $values[$k];
+	}
   extract($values['purchased'], EXTR_PREFIX_ALL, 'date');
   if (!empty($date_Y) && !empty($date_m) && !empty($date_d)) {
   	$sql .= ',purchased=?';

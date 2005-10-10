@@ -94,7 +94,7 @@ if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
 $url = urlencode("$PHP_SELF?house=$q_house&room=$q_room&label=$q_label");
 echo $q->numRows(), ' items', '&nbsp;&nbsp',
 	html_link('edititem.php?cont=' . $url, 'Add New Item'), '<hr>';
-$attrs = array('class' => 'label');
+$attrs = array('class' => 'label', 'valign' => 'top');
 while ($status = $q->fetchInto($record, DB_FETCHMODE_ASSOC)) {
 	if (DB::iserror($status)) die(__FILE__ . '.' . __LINE__ . ': ' . $status->getMessage());
 	$table = new HTML_Table(array('border' => 0));
@@ -119,7 +119,8 @@ while ($status = $q->fetchInto($record, DB_FETCHMODE_ASSOC)) {
 	extract($record, EXTR_PREFIX_ALL, '');
 	$table->setCellContents(0, 0, 'ID: ' . $_id . '&nbsp;&nbsp;<span class="actions">' .
 		html_link('edititem.php?id=' . $_id . '&cont=' . $url, 'Edit') . ' ' .
-		html_link("$PHP_SELF?id=" . $_id . '&action=delete', 'Delete') . '</span>');
+		html_link("$PHP_SELF?id=$_id&action=delete&house=$q_house" .
+							"&room=$q_room&label=$q_label", 'Delete') . '</span>');
 	$table->setCellAttributes(0, 0, array('colspan' => 2));
 	$table->setCellAttributes(1, 1, array('style' => 'width: 20em'));
 
@@ -130,6 +131,7 @@ while ($status = $q->fetchInto($record, DB_FETCHMODE_ASSOC)) {
 		$table->setCellContents($row, $col, $lab . ':&nbsp;');
 		$table->setCellAttributes($row, $col, $attrs);
 		$table->setCellContents($row, $col + 1, $record[strtolower($lab)]);
+		$table->setCellAttributes($row, $col + 1, array('style' => 'width: 20em'));
 	}
 	if (!empty($_url)) {
 		if (!array_key_exists('scheme', parse_url($_url)))
