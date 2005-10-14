@@ -1,2 +1,9 @@
 .label { text-align: right; font-weight: bold }
 .actions { font-size: small }
+span.actions a:link { color: red }
+span.actions a:visited { color: red }
+.shaded { background-color: lightgrey }
+td a:link { color: blue }
+td a:visited { color: blue }
+							 
+

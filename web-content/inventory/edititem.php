@@ -33,7 +33,7 @@ if ($REQUEST_METHOD == 'POST') {
 } else if ($q_id > 0) {	// build and issue the initial query
 	$sql = "SELECT id,name,description,quantity,
 			manufacturer,model,sn,retailer,
-			purchased,price,url,dimensions,artist,url,notes,year
+			purchased,price,value,url,dimensions,artist,url,notes,year
 		FROM items
 		WHERE id=$q_id";
 	$q_deb > 0 && pre_var_dump($sql);
@@ -76,7 +76,7 @@ function &buildForm(&$values) {
 	$form->addElement('text', 'id', 'Id', $attrs);
 	foreach (explode(',', 'name,description,
 			quantity,manufacturer,model,sn,retailer,
-			price,url,dimensions,artist,year') as $k)
+			price,value,url,dimensions,artist,year') as $k)
 		$form->addElement('text', trim($k), ucfirst(trim($k)), $attrs);
 	$form->addElement('textarea', 'notes', 'Notes', array('rows' => 3, 'cols' => 44));
 	$form->addElement('date', 'purchased', 'Purchased',
@@ -104,6 +104,7 @@ function &buildForm(&$values) {
 	$form->addRule('name', 'Name is required', 'required');
 	$form->addRule('quantity', 'Quantity must be positive', 'regex', '/^[1-9]\d*$/');
 	$form->addRule('price', 'Price must be positive', 'regex', '/^[1-9]\d*(\.\d\d)?$/');
+	$form->addRule('value', 'Value must be positive', 'regex', '/^[1-9]\d*(\.\d\d)?$/');
 	$form->addRule('location', 'Location is required', 'required');
 	$form->addRule('year', 'Year must be YYYY', 'regex', '/^(19|20)\d\d$/');
 	$e =& $form->getElement('id');
