@@ -9,7 +9,7 @@ function flip(id,linkid) {
 	link = document.getElementById(linkid);
 	if (elem.style.display == "none") {
 		link.src = "images/editing.gif";
-		elem.style.display = "table-row";
+		elem.style.display = ""; // table-row doesn't work in IE
 	} else {
 		link.src = "images/edit.gif";
 		elem.style.display = "none";
