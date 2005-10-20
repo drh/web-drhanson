@@ -1,31 +1,29 @@
-<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
 <?php
 require_once('util.php');
-require_once('labels.php');
-require_once('DB.php');
+require_once('label.php');
+require_once('labelmap.php');
 require_once('HTML/QuickForm.php');
 
-$q_url = null;
 $q_deb = 0;
 extract($_GET, EXTR_PREFIX_ALL, 'q');
 
-function &buildForm(&$labels) {
+$labels = new Label($dsn, 'labels');
+$labelmap = new LabelMap($dsn, 'labels', 'labelmap');
+
+function &buildForm() {
+	global $labels, $labelmap;
 	global $q_url, $q_deb, $counts;
+	$items =& $labelmap->find_all_counts();
 	$form = new HTML_QuickForm('labels', 'post', '', '_self', NULL, True);
-	$q = $labels->dbh->query("SELECT id,label,COUNT(labelId) AS count
-		FROM $labels->labels LEFT JOIN $labels->labelmap ON id=labelId
-		GROUP BY label,labelId
-		ORDER BY label");
-	if (DB::iserror($q)) die(__FILE__ . '.' . __LINE__ . ': ' . $q->getMessage());
-	while ($status = $q->fetchInto($row, DB_FETCHMODE_OBJECT)) {
-		if (DB::iserror($status)) die(__FILE__ . '.' . __LINE__ . ': ' . $status->getMessage());
-		$group[1] =& HTML_QuickForm::createElement('checkbox', "ids[$row->id]");
-		$group[2] =& HTML_QuickForm::createElement('text', $row->id, '');
-		$group[2]->setValue($row->label);
-		$counts[$row->id] = $row->count;
+	foreach ($items as $i => $row) {
+		extract($row, EXTR_PREFIX_ALL, '');
+		$group[1] =& HTML_QuickForm::createElement('checkbox', "ids[$_id]");
+		$group[2] =& HTML_QuickForm::createElement('text', $_id, '');
+		$group[2]->setValue($_label);
+		$counts[$_id] = $_item_count;
 		$group[3] =& HTML_QuickForm::createElement('static', '', '',
-			'<small>(' . $row->count . ' items)</small>');
-		$group[4] =& HTML_QuickForm::createElement('hidden', "count[$row->id]", $row->count);
+			'<small>(' . $_item_count . ' items)</small>');
+		$group[4] =& HTML_QuickForm::createElement('hidden', "count[$_id]", $_item_count);
 		$form->addGroup($group, null);
 	}
 	unset($group[3]);
@@ -43,7 +41,7 @@ function &buildForm(&$labels) {
 	return $form;
 }
 
-$form =& buildForm($labels);
+$form =& buildForm();
 if ($form->validate()) {
 	$values = $form->getSubmitValues();
 	$q_deb = $values['deb'];
@@ -52,25 +50,15 @@ if ($form->validate()) {
 	$do = 'do' . $values['submit'];
 	if ($do($values, $labels)) {
 		$_POST = NULL;
-		$form =& buildForm($labels);
+		$form =& buildForm();
 	}
 }
 
 function doDelete(&$values, &$labels) {
-	global $counts;
-	if (function_exists('delete_condition')) {
-		$n = 0;
-		foreach ($values['ids'] as $id => $flag) {
-			assert($flag);
-			if (!delete_condition($id, $counts[$id]))
-				$n++;
-		}
-		if ($n > 0)
-			return False;
-	}
 	foreach ($values['ids'] as $id => $flag) {
 		assert($flag);
-		$labels->deleteLabelById($id);
+		$labels->delete(array('id' => $id));
+		$labelmap->delete(array('labelId' => $id));
 	}
 	return True;
 }
@@ -80,17 +68,17 @@ function doRename(&$values, &$labels) {
 	foreach ($values['ids'] as $id => $flag) {
 		assert($flag);
 		if (empty($values[$id])) {
-			echo 'New label name for ' . $labels->getLabel($id) . ' must be nonempty<br>';
+			echo 'New label name for must be nonempty<br>';
 			$n++;
-		} elseif ($labels->getLabelId($values[$id])) {
-			echo 'New label name for ' . $labels->getLabel($id) . ' must be unique<br>';
+		} elseif (0) {
+			echo 'New label name for must be unique<br>';
 			$n++;
 		}
 	}
 	if ($n > 0)
 		return False;
 	foreach ($values['ids'] as $id => $flag)
-		$labels->renameLabelById($id, $values[$id]);
+		$labels->update(array('id' => $id, 'label' => $values[$id]));
 	return True;
 }
 
@@ -99,16 +87,13 @@ function doAdd(&$values, &$labels) {
 	if (empty($newlabel)) {
 		echo 'New label must be nonempty<br>';			
 		return False;
-	} elseif ($labels->getLabelId($newlabel)) {
+	} elseif (0) {
 		echo "$newlabel already exists";
 		return False;
 	} else
-		$labels->addLabel($newlabel);
+		$labels->create(array('label' => $newlabel));
 	return True;
 }
-if (!empty($q_url))
-	echo '<p>', html_link(urldecode($q_url), 'Back to main page'), '</p>';
+
 $form->display();
-if (!empty($q_url))
-	echo '<p>', html_link(urldecode($q_url), 'Back to main page'), '</p>';
 ?>

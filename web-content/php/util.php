@@ -1,4 +1,3 @@
-<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
 <?php
 
 # dumps var=value inside a <pre> ... </pre> block.
@@ -38,8 +37,37 @@ function value($val, $default="") {
 
 # returns <a href="htmlentities($url)">$text</a>
 function html_link($url, $text) {
-	if (empty($url)) return $text;
-	return '<a href="' . htmlentities($url) . '"' . ">$text</a>";
+	return link_to($url, $text);
+}
+
+# returns $url?query...#anchor
+# ?query... and #anchor are omitted if they are equal ''.
+function compose_url($url, $query=array(), $anchor='') {
+	$qstr = '';
+	foreach ($query as $k => $v)
+		$qstr .= "&$k=" . urlencode($v);
+	if (strlen($qstr) > 0)
+		$url .= '?' . substr($qstr, 1);
+	if (strlen($anchor) > 0)
+		$url .= '#' . $anchor;
+	return $url;
+}
+
+# returns <a href="htmlentities($url...)" attrs...>$text</a>
+function link_to($url, $text, $query=array(), $attrs=array(), $anchor='') {
+	if (empty($url))
+		return $text;
+	$html = 'href="' . htmlentities(compose_url($url, $query, $anchor)) . '"';
+	foreach ($attrs as $k => $v)
+		$html .= " $k='$v'";
+	return '<a ' . $html . ">$text</a>";
+}
+
+# redirect to $url; does not return!
+function redirect_to($url, $query=array(), $anchor='') {
+	header('Location: ' . compose_url($url, $query, $anchor));
+	header('Cache-Control: no-cache');
+	exit;
 }
 
 $PHP_SELF = getElement($_SERVER, "SCRIPT_NAME");
