@@ -1,0 +1,17 @@
+<%
+Dir.chdir(File.dirname(Web::env['path_translated']))
+
+image = Web['image']
+back = "<a href='#{Web['back']}'>Back</a>" if Web::key?('back')
+home = "<a href='#{Web['home']}'>Go to #{Web['home']}</a>" if Web::key?('home')
+%>
+<html>
+<head>
+<title><%= image %></title>
+</head>
+<body>
+<p><%= back %></p>
+<img src='<%= image %>' border=0'>
+<p style='font-size: smaller'><%= home %></p>
+</body>
+</html>
