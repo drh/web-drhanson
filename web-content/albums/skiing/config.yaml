@@ -1,0 +1,56 @@
+order: [ 1, 2, 3, 4, 5, 6, 7, 9, 10 ]
+back:
+  url: http://drhanson.net
+  text: Back to drhanson.net
+next: /images/next.gif
+prev: /images/previous.gif
+style: "body { background-color: white; border-color: gray }"
+filmstrip:
+  height: 130
+  location: bottom
+  style: "a img { border-width: 1px; border-color: gray }"
+image:
+  height: 70%
+  style: "body.image { text-align: left }\n
+          body.image>img { border-width: 1px; border-style: solid }"
+title: Maylee's Skiing Photos
+1:
+  title: Maylee at Snowbird, Spring 1999
+  image: http://mayleenoah.net/photoalbums/Skiing/page1.jpg
+  thumbnail: http://mayleenoah.net/photoalbums/Skiing/t_page1.jpg
+2:
+  title: Maylee at Snowbird, Spring 1999
+  image: http://mayleenoah.net/photoalbums/Skiing/page2.jpg
+  thumbnail: http://mayleenoah.net/photoalbums/Skiing/t_page2.jpg
+3:
+  title: Maylee at Snowbird, Spring 1999
+  image: http://mayleenoah.net/photoalbums/Skiing/page3.jpg
+  thumbnail: http://mayleenoah.net/photoalbums/Skiing/t_page3.jpg
+4:
+  title: Dave at Blackcomb, Spring 1999
+  image: http://mayleenoah.net/photoalbums/Skiing/page4.jpg
+  thumbnail: http://mayleenoah.net/photoalbums/Skiing/t_page4.jpg
+5:
+  title: Maylee at Snowbird
+  image: http://mayleenoah.net/photoalbums/Skiing/page5.jpg
+  thumbnail: http://mayleenoah.net/photoalbums/Skiing/t_page5.jpg
+6:
+  title: Maylee and Dave at Snowbird
+  image: http://mayleenoah.net/photoalbums/Skiing/page6.jpg
+  thumbnail: http://mayleenoah.net/photoalbums/Skiing/t_page6.jpg
+7:
+  title: Dave at Snowbird, Winter 2001
+  image: http://mayleenoah.net/photoalbums/Skiing/page7.jpg
+  thumbnail: http://mayleenoah.net/photoalbums/Skiing/t_page7.jpg
+8:
+  title: Maylee at Snowbird, Winter 2004
+  image: http://mayleenoah.net/photoalbums/Skiing/MAYLEE2.JPG
+  thumbnail: http://mayleenoah.net/photoalbums/Skiing/MAYLEE2_small.JPG
+9:
+  title: Maylee at Snowbird, Winter 2004
+  image: http://mayleenoah.net/photoalbums/Skiing/MAYLEE1.JPG
+  thumbnail: http://mayleenoah.net/photoalbums/Skiing/MAYLEE1_small.JPG
+10:
+  title: Dave at Snowbird, Winter 2005
+  image: /SLC/images/dave.jpg
+  thumbnail: thumbnails/dave.jpg

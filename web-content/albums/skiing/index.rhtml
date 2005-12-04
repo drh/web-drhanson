@@ -1,0 +1,5 @@
+<%
+Dir.chdir(File.dirname(Web::env['path_translated']))
+require 'filmstripviewer.rb'
+Web << FilmStripViewer.new(Web::env['script_Url']).display(Web)
+%>
