@@ -11,6 +11,11 @@
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/"/>
 			</item>
 			<item>
+				<attribute name="externalUrl" value="http://www.micksmtn.20m.com/aftwin.html"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/20m-aftwin.html"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
 				<attribute name="externalUrl" value="http://www.adessosystems.com/PageLoad.aspx/for_you"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/adessosystems-for_you"/>
 				<attribute name="urlParams" value=""/>
@@ -156,8 +161,23 @@
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
+				<attribute name="externalUrl" value="http://www.drhanson.net/chatter_creek/2005"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/drhanson-2005"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
 				<attribute name="externalUrl" value="http://www.drhanson.net/WoodWorking/"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/drhanson-WoodWorking"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.drhanson.net/baldy_chutes/images/mainchutefromtop_04.jpg"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/drhanson-mainchutefromtop_04.jpg"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://www.drhanson.net/pipeline"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/drhanson-pipeline"/>
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
@@ -246,6 +266,11 @@
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
+				<attribute name="externalUrl" value="http://classic.mountainzone.com/snowboarding/99/features/snowbird/"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/mountainzone-snowbird"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
 				<attribute name="externalUrl" value="http://www.ofoto.com/BrowsePhotos.jsp"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/ofoto-BrowsePhotos.jsp"/>
 				<attribute name="urlParams" value=""/>
@@ -258,6 +283,11 @@
 			<item>
 				<attribute name="externalUrl" value="http://subversion.tigris.org"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/tigris"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="%26lt;%25=%20image%20%25%26gt;"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/untitled%20URL"/>
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>
@@ -283,6 +313,11 @@
 			<item>
 				<attribute name="externalUrl" value="http://pg.photos.yahoo.com/ph/drh98052/album"/>
 				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/yahoo-album"/>
+				<attribute name="urlParams" value=""/>
+			</item>
+			<item>
+				<attribute name="externalUrl" value="http://photos.yahoo.com/drh98052"/>
+				<attribute name="url" value="siteEntry://externals/Scanned%2520URLs/yahoo-drh98052"/>
 				<attribute name="urlParams" value=""/>
 			</item>
 			<item>

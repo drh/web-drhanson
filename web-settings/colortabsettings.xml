@@ -10,6 +10,14 @@
 				<attribute name="url" value="siteEntry://colors/Scanned%2520Colors/"/>
 			</item>
 			<item>
+				<attribute name="rgb" value="#ff00ff"/>
+				<attribute name="url" value="siteEntry://colors/Scanned%2520Colors/fuchsia"/>
+			</item>
+			<item>
+				<attribute name="rgb" value="#ff0000"/>
+				<attribute name="url" value="siteEntry://colors/Scanned%2520Colors/red"/>
+			</item>
+			<item>
 				<attribute name="rgb" value="#ffffff"/>
 				<attribute name="url" value="siteEntry://colors/Scanned%2520Colors/white"/>
 			</item>
