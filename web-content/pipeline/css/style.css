@@ -4,3 +4,4 @@ td   { font-size: smaller; background-position: center bottom;
 .floatright { float: right; padding-left: 12px; }
 .floatleft  { float: left; padding-right: 12px; }
 .description  { width: 512px }
+.back { font-size: smaller; text-align: right }

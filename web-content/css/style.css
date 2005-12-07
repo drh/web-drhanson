@@ -1,3 +1,5 @@
 .floatright { float: right; padding-left: 12px; }
 .floatleft  { float: left; padding-right: 12px; }
 .smallcaps { color: fuchsia; font-size: smaller; font-weight: bold; text-transform: uppercase }
+.hanging  { text-align: left; text-indent: -2em; margin-left: 2em }
+.back  { font-size: smaller; text-align: right }
