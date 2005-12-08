@@ -4,11 +4,11 @@ back:
   text: Back to drhanson.net
 next: /images/next.gif
 prev: /images/previous.gif
-style: "body { background-color: white; border-color: gray }"
+style: "body { background-color: white; border-color: gray }
+			 a img { border-width: 1px; border-color: gray }"
 filmstrip:
   height: 130
   location: bottom
-  style: "a img { border-width: 1px; border-color: gray }"
 image:
   height: 70%
   style: "body.image { text-align: left }\n
