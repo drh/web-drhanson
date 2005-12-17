@@ -1,4 +1,4 @@
-order: [ 1, 2, 3, 4, 5, 6, 7, 9, 10 ]
+order: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
 back:
   url: http://drhanson.net
   text: Back to drhanson.net
@@ -11,7 +11,8 @@ filmstrip:
   location: bottom
 image:
   height: 70%
-  style: "body.image { text-align: left }\n
+  style: "body { background-color: white }\n
+          body.image { text-align: left }\n
           body.image>img { border-width: 1px; border-style: solid }"
 title: Maylee's Skiing Photos
 1:
@@ -44,13 +45,19 @@ title: Maylee's Skiing Photos
   thumbnail: http://mayleenoah.net/photoalbums/Skiing/t_page7.jpg
 8:
   title: Maylee at Snowbird, Winter 2004
-  image: http://mayleenoah.net/photoalbums/Skiing/MAYLEE2.JPG
+  image: http://mayleenoah.net/photoalbums/Skiing/MAYLEE2.jpg
   thumbnail: http://mayleenoah.net/photoalbums/Skiing/MAYLEE2_small.JPG
 9:
   title: Maylee at Snowbird, Winter 2004
   image: http://mayleenoah.net/photoalbums/Skiing/MAYLEE1.JPG
   thumbnail: http://mayleenoah.net/photoalbums/Skiing/MAYLEE1_small.JPG
 10:
-  title: Dave at Snowbird, Winter 2005
+  title: Dave at Snowbird, Spring 2005
   image: http://www.drhanson.net/SLC/images/dave.jpg
   thumbnail: thumbnails/dave.jpg
+11:
+  title: Maylee at Snowbird, Spring 2005
+  image: images/maylee2005.jpg
+12:
+  title: Maylee at Snowbird, Spring 2005
+  image: images/maylee2005_2.jpg

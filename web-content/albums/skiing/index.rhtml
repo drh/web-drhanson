@@ -1,5 +1,5 @@
 <%
 Dir.chdir(File.dirname(Web::env['path_translated']))
-require 'image2viewer.rb'
-Web << Image2Viewer.new(Web::env['script_url']).display(Web)
+require 'gridviewer.rb'
+Web << GridViewer.new(Web::env['redirect_url']).display(Web)
 %>
