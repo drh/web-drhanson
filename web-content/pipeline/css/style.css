@@ -1,4 +1,7 @@
 img  { border: none }
 td   { font-size: smaller; background-position: center bottom;
        text-align: center; vertical-align: bottom }
-.description  { width: 512px }
+.description   { text-align: left; margin-right: auto; margin-left: auto; width: 556px }
+body   { color: white; background-color: #262626; text-align: center }
+a:visited  { color: gray }
+a:link { color: gray }

@@ -4,16 +4,23 @@ back:
   text: Back to drhanson.net
 next: /images/next.gif
 prev: /images/previous.gif
-style: "body { background-color: white; border-color: gray }
-			 a img { border-width: 1px; border-color: gray }"
+width: 100%
+style: "body { text-align: center; background-color: rgb(38,38,38); color: white; border-color: gray }\n
+			 a img { border-width: 0px; border-color: gray }\n
+			 a:link { color: gray }\n
+			 a:visited { color: gray }\n
+			 p.back { position: absolute; top: 4px; right: 4px }"
 filmstrip:
   height: 130
   location: bottom
 image:
   height: 70%
-  style: "body { background-color: white }\n
-          body.image { text-align: left }\n
-          body.image>img { border-width: 1px; border-style: solid }"
+  style: "body { background-color: rgb(38,38,38); color: white }\n
+          body.image { text-align: center }\n
+          body.image>img { border-width: 1px; border-style: solid }\n
+				  a:link { color: gray }\n
+		 		  a:visited { color: gray }\n
+					p.back { position: absolute; top: 4px; right: 4px }"
 title: Maylee's Skiing Photos
 1:
   title: Maylee at Snowbird, Spring 1999
