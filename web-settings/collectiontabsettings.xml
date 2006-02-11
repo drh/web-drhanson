@@ -1,53 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sitesettings SYSTEM "sitesettings.dtd">
-<!--Adobe GoLive settings file-->
-<sitesettings section="collectiontab" version="1.0">
-	<attributes>
-		<attribute name="dataVersion" value="1"/>
-		<list name="entries">
-			<item>
-				<attribute name="collectionType" value="3"/>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/"/>
-				<attribute name="query" value=""/>
-				<attribute name="queryName" value=""/>
-				<attribute name="timeRun" value="2040-02-05%2022:28:16"/>
-				<attribute name="unfolded" value="no"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/Maylee.jpg"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/Maylee.jpg"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/cameronskiing.mov"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/cameronskiing.mov"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/dot_blue1.gif"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/dot_blue.gif"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/drh75x75.gif"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="images/drh75x75.gif"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/index1.html"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="index.html"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/tioga.htm"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="tioga.htm"/>
-			</item>
-			<item>
-				<attribute name="collectionUrl" value="siteEntry://collections/published-files/whistler.html"/>
-				<attribute name="isRelative" value="yes"/>
-				<attribute name="url" value="whistler.html"/>
-			</item>
-		</list>
-	</attributes>
-</sitesettings>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE sitesettings SYSTEM "sitesettings.dtd"><!--Adobe GoLive settings file--><sitesettings section="collectiontab" version="1.0">	<attributes>		<attribute name="dataVersion" value="1"/>		<list name="entries">			<item>				<attribute name="collectionType" value="0"/>				<attribute name="collectionUrl" value="siteEntry://collections/published-files/"/>				<attribute name="unfolded" value="no"/>			</item>			<item>				<attribute name="collectionUrl" value="siteEntry://collections/published-files/Maylee.jpg"/>				<attribute name="isRelative" value="yes"/>				<attribute name="url" value="images/Maylee.jpg"/>			</item>			<item>				<attribute name="collectionUrl" value="siteEntry://collections/published-files/dot_blue1.gif"/>				<attribute name="isRelative" value="yes"/>				<attribute name="url" value="images/dot_blue.gif"/>			</item>			<item>				<attribute name="collectionUrl" value="siteEntry://collections/published-files/drh75x75.gif"/>				<attribute name="isRelative" value="yes"/>				<attribute name="url" value="images/drh75x75.gif"/>			</item>			<item>				<attribute name="collectionUrl" value="siteEntry://collections/published-files/index1.html"/>				<attribute name="isRelative" value="yes"/>				<attribute name="url" value="index.html"/>			</item>			<item>				<attribute name="collectionUrl" value="siteEntry://collections/published-files/tioga.htm"/>				<attribute name="isRelative" value="yes"/>				<attribute name="url" value="tioga.htm"/>			</item>			<item>				<attribute name="collectionUrl" value="siteEntry://collections/published-files/whistler.html"/>				<attribute name="isRelative" value="yes"/>				<attribute name="url" value="whistler.html"/>			</item>		</list>	</attributes></sitesettings>
