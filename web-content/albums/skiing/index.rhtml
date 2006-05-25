@@ -1,5 +1,0 @@
-<%
-Dir.chdir(File.dirname(Web::env['path_translated']))
-require 'gridviewer.rb'
-Web << GridViewer.new(Web::env['redirect_url']).display(Web)
-%>
