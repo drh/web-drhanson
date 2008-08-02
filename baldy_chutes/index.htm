@@ -6,130 +6,150 @@
     <title>Skiing Baldy Chutes</title>
 		<script type="text/javascript" src="http://www.drhanson.net/js/base.js"></script>
 		<script type="text/javascript" src="http://www.drhanson.net/js/ajax.js"></script>
+  <script src="js/SpryTabbedPanels.js" type="text/javascript"></script>
 		<link href="../css/style.css" type="text/css" rel="stylesheet" media="all">
 		<style type="text/css">
-body { color: white; background-color: rgb(38,38,38); }
+body { color: white; background-color: rgb(38,38,38); margin: 4px 0 0 0 }
 div#body { text-align: left ; width: 724px; margin-right: auto; margin-left: auto; }
 a:visited, a:link { color: gray }
 div table { margin-left: auto; margin-right: auto }
-h2 { text-align: center }
-hr { width: 660px }
 span { cursor: pointer; color: gray }
-div#image { display: none; position: relative; top: 0px; }
+div#image {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	top: 45px;
+	z-index: 2;
+	background-color: rgb(38,38,38);
+}
+h2 { text-align: center; }
+p.first { margin-top: 2px; }
 --></style>
-		<script type="text/javascript"><!--
+<script type="text/javascript"><!--
 
 function show(src, title, id) {
   var div = document.getElementById("image");
   div.innerHTML = "<center><p>" + title + "</p><img src='images/" + src + "'>" +
-		"<p><span onclick='hide(\"" + id + "\")'>Back to the previous page</span></p></center>";
+		"<p><span onclick='hide(\"" + id + "\")'>Close</span></p></center>";
   var body = document.getElementById("body");
-  body.style.visibility = "hidden";
-  self.scrollTo(0, 0);
-  div.style.display = "block";
+  div.style.visibility = "visible";
 }
 
 function hide(id) {
   var div = document.getElementById("image");
   var body = document.getElementById("body");
-  var h3 = document.getElementById(id);
-  div.style.display = "none";
-  div.style.height = "0px";
-	h3.scrollIntoView();
+  div.style.visibility = "hidden";
   body.style.visibility = "visible";
 }
 
 //-->
 </script>
-	</head>
+  <link href="css/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
+</head>
 
   <body>
-    <p class="back"><a href="/">Back to drhanson.net</a></p>
+    <p class="back"><a href="http://drhanson.net">Back to drhanson.net</a></p>    
     <div id="image"></div>
-    <div id="body">
-      <h2>Skiing Baldy Chutes</h2>
-			<h3 id="2006">2006</h3>
-			<p>On Mar. 22nd, Alta opened both the Alta and Snowbird ridges to the Baldy chutes at the same time. Usually, the Alta side opens first, so the Alta skiers get the best conditions, and the Snowbird side opens a day or two later. We were eager to get semi-fresh tracks in Main Chute; we should've known better. We hiked up through deeper than usual snow in the sun.</p>
-			<p>The photos below show (l-to-r) Wilma Corkery and Joni Borghesani, me, Bev Riedel, and Wilma, Joni, Bev and Bari Levine (who took these photos) on the top of Baldy.</p>
-			<table border="0" cellpadding="2">
-				<tr>
-					<td valign="bottom"><span onclick='show("wilma-joni_06.jpg","Wilma & Joni",2006)'><img src="thumbnails/wilma-joni_06.jpg" alt="" height="145" width="103" border="0"></span></td>
-					<td valign="bottom"><span onclick='show("dave_06.jpg","Dave",2006)'><img src="thumbnails/dave_06.jpg" alt="" height="145" width="109" border="0"></span></td>
-					<td valign="bottom"><span onclick='show("bev_06.jpg","Bev",2006)'><img src="thumbnails/bev_06.jpg" alt="" height="145" width="109" border="0"></span></td>
-					<td valign="bottom"><span onclick='show("red-gang_06.jpg","Wilma, Joni, Bari, Bev",2006)'><img src="thumbnails/red-gang_06.jpg" alt="" height="104" width="145" border="0"></span></td>
-				</tr>
-			</table>
-			<p>We got to the top just in time to ski the Main Chute in the fog. Worse, the chute had been bombed mercilessly and had slid; it was either scraped off or littered with piles of gooey poo. It was awful. I had to stop to knock the snow off my skis because they got too heavy. Lucikly, we heard that the Keyhole route back to Snowbird was also awful, so we traversed around Westward Ho. To quote Bari: &quot;There was nothing good about that whole fiasco.&quot;</p>				
-			<hr>
-			<h3 id="2005">2005</h3>
-			The 2004/5 ski season was one of the best snow years in many seasons. At one point, Alta was reporting a 211&quot; base and over 650&quot; of snowfall. The Baldy Chutes were open many times, from both sides, and I skied Main Chute at least 3 times and Little Chute once. On Mar. 6th, a herd of us hiked up and skied the chutes and then back to Snowbird via the Keyhole; we never rode an Alta lift. Click on the thumbnails below for larger images; these photos were taken by Rick Gardiner.
-			<p>Here's some of the gang at the top of Mt. Baldy. In the left photo are (l-to-r) Christine Gerner, Hania Stawowy, Lala Stawowy, and Joni Borghesani. Di Landau (partially hidden), me, Chris Chads, and Christine are in the middle photo, and that's Joni again in the right photo.</p>
-      <table border="0" cellpadding="2">
-        <tr>
-          <td valign="bottom"><span onclick='show("gang1_05.jpg","Christine, Hania, Lala, Joni",2005)'><img src="thumbnails/gang1_05.jpg" alt="" height="108" width="145" border="0"></span></td>
-          <td valign="bottom"><span onclick='show("gang2_05.jpg","Di, Dave, Chris, Christine",2005)'><img src="thumbnails/gang2_05.jpg" alt="" height="108" width="145" border="0"></span></td>
-          <td><span onclick='show("joni_05.jpg","Joni",2005)'><img src="thumbnails/joni_05.jpg" alt="" height="145" width="108" border="0"></span></td>
-        </tr>
-      </table>
-      <p>Christine and I decided to ski Little Chute, which is a bit steeper and narrower than Main Chute and it curves to the skier's right, but it was smoother. Little Chute is the second slot from the right in <span onclick='show("mainchute_04.jpg","Main Chute",2005)'>this photo</span> and in <span onclick='show("mainchute.jpg","Main Chute",2005)'>this one</span>; the left photo below looks down Little Chute. The rocks on the right side of the entrance spooked me, so I sideslipped past them; Christine didn't notice the rocks and zipped right down the chute. Everyone else skied Main Chute; the second and subsequent photos below show Joni just after sliding in, Karan Bleicher about 1/3 down (on her tele skis!), and a view looking up Main Chute from about 2/3 down.</p>
-			<table border="0" cellpadding="2">
-        <tr>
-          <td valign="bottom"><span onclick='show("little_chute_05.jpg","Little Chute",2005)'><img src="thumbnails/little_chute_05.jpg" alt="" height="108" width="145" border="0"></span></td>
-          <td valign="bottom"><span onclick='show("main_chute_05.jpg","Joni in Main Chute",2005)'><img src="thumbnails/main_chute_05.jpg" alt="" height="108" width="145" border="0"></span></td>
-          <td valign="bottom"><span onclick='show("karan_05.jpg","Karan in Main Chute",2005)'><img src="thumbnails/karan_05.jpg" alt="" height="108" width="145" border="0"></span></td>
-          <td><span onclick='show("lookingup_05.jpg","Looking up Main Chute",2005)'><img src="thumbnails/lookingup_05.jpg" alt="" height="108" width="145" border="0"></span></td>
-        </tr>
-      </table>
-			<hr>
-			<h3 id="2004">2004</h3>
-      <p>A great snow year permitted Alta to open the Baldy Chutes on Fri. Jan. 9th, and a group of us&mdash;Paul Allard, Joni Borghesani, Susan Graham, myself, Gene Myers, and Beverly Riedel&mdash;skied the Main Chute on Sat. Jan. 10th. Click on the thumbnails below for larger images. All of these photos were taken by Susan Graham.</p>
-      <p>The main chute is the rightmost slot in the view from the Germania chair at Alta in the leftmost photo below. We hiked up the Alta side, which is a longer and more difficult hike than the hike from the Snowbird side. Paul, Bev, Gene, Joni, and me are the hikers in the middle photo. Note the other hikers in the rocks in the middle photo; these rocks and steep pitch above them are the toughest part of the hike. I wish I'd had my ski pack. I think I'm the second hiker from the top in the right photo.</p>
-      <table border="0" cellpadding="2">
-          <tr>
-            <td valign="bottom"><span onclick='show("mainchute_04.jpg","Main Chute",2004)'><img src="thumbnails/mainchute_04.jpg" border="0"></span></td>
-            <td valign="bottom"><span onclick='show("baldyhike_04.jpg","Baldy hike from Alta",2004)'><img src="thumbnails/baldyhike_04.jpg" border="0"></span></td>
-            <td><span onclick='show("baldyhike2_04.jpg","Ridge up Baldy",2004)'><img src="thumbnails/baldyhike2_04.jpg" border="0"></span></td>
-          </tr>
-        </table>
-        <p>After a 45-minute hike, we all rested at the top and Susan took these photos of Joni and Bev and Gene and me.</p>
-        <table border="0" cellpadding="2">
-          <tr>
-            <td valign="bottom"><span onclick='show("joni-bev_04.jpg","Joni & Bev",2004)'><img src="thumbnails/joni-bev_04.jpg" border="0"></span></td>
-            <td><span onclick='show("gene-dave_04.jpg","Dave & Gene",2004)'><img src="thumbnails/gene-dave_04.jpg" border="0"></span></td>
-          </tr>
-        </table>
-        <p>We had the chute to ourselves; the photos below show, from the left, the chute from the top, Paul about to go in high, me making a less-than-perfect turn about 1/4 the way down, and Gene resting.</p>
-        <table border="0" cellpadding="2">
-          <tr>
-            <td valign="bottom"><span onclick='show("mainchutefromtop_04.jpg","Looking down Main Chute",2004)'><img src="thumbnails/mainchutefromtop_04.jpg" border="0"></span></td>
-            <td><span onclick='show("paul_04.jpg","Paul",2004)'><img src="thumbnails/paul_04.jpg" border="0"></span></td>
-            <td><span onclick='show("dave_04.jpg","Dave in Main Chute",2004)'><img src="thumbnails/dave_04.jpg" border="0"></span></td>
-            <td><span onclick='show("gene_04.jpg","Gene in Main Chute",2004)'><img src="thumbnails/gene_04.jpg" border="0"></span></td>
-          </tr>
-        </table>
-			<hr>
-			<h3 id="2002">2002</h3>
-      <p>Alta opened the Baldy Chutes during the week of Mar. 18th, and I skied my first run down the &quot;Main Chute&quot; on Friday, Mar. 22. The Main Chute is the rightmost (skier's leftmost) slot in the first picture of Mt. Baldy below. The second picture shows the Main Chute looking up from the bottom of Ballroom at Alta. The entrance is on the skier's left just below the cornice at the top.</p>
-      <p>I hiked up from the Snowbird side, which is a noticeably easier hike and takes about 30 minutes. The hike from the Alta side is steeper and longer; it takes about 45 minutes. The third photo was taken from the top of the chute; note the tracks in the entrance coming in from the left just below the cornice. I'm told the overall average slope in the chute is 42 degrees, but it didn't seem that steep, except at the top.</p>
-      <p>The fourth photo is from about 1/3 the way down the chute, looking up. I'm the skier at the top. Notice the cliffs on the downhill sides of the moguls. The last photo looks up from the bottom of the chute at the exit to the top of Ballroom.</p>
-      <p>Click on the thumbnails below for larger images, which are each about 45KB.</p>
-      <table border="0" cellpadding="2">
-          <tr>
-            <td valign="bottom"><span onclick='show("baldy.jpg","Main Chute",2002)'><img src="thumbnails/baldy.jpg" height="108" width="145" border="0"></span></td>
-            <td><span onclick='show("mainchute.jpg","Main Chute",2002)'><img src="thumbnails/mainchute.jpg" height="145" width="144" border="0"></span></td>
-            <td valign="bottom"><span onclick='show("mainchutetop.jpg","Looking down Main Chute",2002)'><img src="thumbnails/mainchutetop.jpg" height="99" width="145" border="0"></span></td>
-            <td valign="bottom"><span onclick='show("mainchutemiddle.jpg","Looking up Main Chute",2002)'><img src="thumbnails/mainchutemiddle.jpg" height="98" width="145" border="0"></span></td>
-            <td><span onclick='show("mainchutebottom.jpg","Main Chute from Ballroom",2002)'><img src="thumbnails/mainchutebottom.jpg" height="145" width="108" border="0"></span></td>
-          </tr>
-          <tr>
-            <td><font size="1">Maylee Noah, 3/28/2002</font></td>
-            <td><font size="1">Maylee Noah, 3/28/2002</font></td>
-            <td><font size="1">Jay Scappini, 3/22/2002</font></td>
-            <td><font size="1">Jay Scappini, 3/22/2002</font></td>
-            <td><font size="1">Maylee Noah, 3/28/2002</font></td>
-          </tr>
-        </table>
+  <div id="body">
+	<h2>Skiing Baldy Chutes</h2>
+        <p>Click on the thumbnails in the tabs below for larger images.</p>
+    <div id="TabbedPanels1" class="TabbedPanels">
+        <ul class="TabbedPanelsTabGroup">
+          <li class="TabbedPanelsTab" tabindex="0">2002</li>
+          <li class="TabbedPanelsTab" tabindex="0">2004</li>
+          <li class="TabbedPanelsTab" tabindex="0">2005</li>
+          <li class="TabbedPanelsTab" tabindex="0">2006</li>
+        </ul>
+        <div class="TabbedPanelsContentGroup">
+          <div class="TabbedPanelsContent">
+            <p class='first'>Alta opened the Baldy Chutes during the week of Mar. 18th, and I skied my first run down the &quot;Main Chute&quot; on Friday, Mar. 22. The Main Chute is the rightmost (skier's leftmost) slot in the first picture of Mt. Baldy below. The second picture shows the Main Chute looking up from the bottom of Ballroom at Alta. The entrance is on the skier's left just below the cornice at the top.</p>
+            <p>I hiked up from the Snowbird side, which is a noticeably easier hike and takes about 30 minutes. The hike from the Alta side is steeper and longer; it takes about 45 minutes. The third photo was taken from the top of the chute; note the tracks in the entrance coming in from the left just below the cornice. I'm told the overall average slope in the chute is 42 degrees, but it didn't seem that steep, except at the top.</p>
+            <p>The fourth photo is from about 1/3 the way down the chute, looking up. I'm the skier at the top. Notice the cliffs on the downhill sides of the moguls. The last photo looks up from the bottom of the chute at the exit to the top of Ballroom.</p>
+            <table border="0" cellpadding="2">
+              <tr>
+                <td valign="bottom"><span onclick='show("baldy.jpg","Main Chute",2002)'><img src="thumbnails/baldy.jpg" height="108" width="145" border="0"></span></td>
+                <td><span onclick='show("mainchute.jpg","Main Chute",2002)'><img src="thumbnails/mainchute.jpg" height="145" width="144" border="0"></span></td>
+                <td valign="bottom"><span onclick='show("mainchutetop.jpg","Looking down Main Chute",2002)'><img src="thumbnails/mainchutetop.jpg" height="99" width="145" border="0"></span></td>
+                <td valign="bottom"><span onclick='show("mainchutemiddle.jpg","Looking up Main Chute",2002)'><img src="thumbnails/mainchutemiddle.jpg" height="98" width="145" border="0"></span></td>
+                <td><span onclick='show("mainchutebottom.jpg","Main Chute from Ballroom",2002)'><img src="thumbnails/mainchutebottom.jpg" height="145" width="108" border="0"></span></td>
+              </tr>
+              <tr>
+                <td><font size="1">Maylee Noah, 3/28/2002</font></td>
+                <td><font size="1">Maylee Noah, 3/28/2002</font></td>
+                <td><font size="1">Jay Scappini, 3/22/2002</font></td>
+                <td><font size="1">Jay Scappini, 3/22/2002</font></td>
+                <td><font size="1">Maylee Noah, 3/28/2002</font></td>
+              </tr>
+            </table>
+          </div>
+          <div class="TabbedPanelsContent">
+            <p class='first'>A great snow year permitted Alta to open the Baldy Chutes on Fri. Jan. 9th, and a group of us&mdash;Paul Allard, Joni Borghesani, Susan Graham, myself, Gene Myers, and Beverly Riedel&mdash;skied the Main Chute on Sat. Jan. 10th. All of these photos were taken by Susan Graham.</p>
+            <p>The main chute is the rightmost slot in the view from the Germania chair at Alta in the leftmost photo below. We hiked up the Alta side, which is a longer and more difficult hike than the hike from the Snowbird side. Paul, Bev, Gene, Joni, and me are the hikers in the middle photo. Note the other hikers in the rocks in the middle photo; these rocks and steep pitch above them are the toughest part of the hike. I wish I'd had my ski pack. I think I'm the second hiker from the top in the right photo.</p>
+            <table border="0" cellpadding="2">
+              <tr>
+                <td valign="bottom"><span onclick='show("mainchute_04.jpg","Main Chute",2004)'><img src="thumbnails/mainchute_04.jpg" border="0"></span></td>
+                <td valign="bottom"><span onclick='show("baldyhike_04.jpg","Baldy hike from Alta",2004)'><img src="thumbnails/baldyhike_04.jpg" border="0"></span></td>
+                <td><span onclick='show("baldyhike2_04.jpg","Ridge up Baldy",2004)'><img src="thumbnails/baldyhike2_04.jpg" border="0"></span></td>
+              </tr>
+            </table>
+            <p>After a 45-minute hike, we all rested at the top and Susan took these photos of Joni and Bev and Gene and me.</p>
+            <table border="0" cellpadding="2">
+              <tr>
+                <td valign="bottom"><span onclick='show("joni-bev_04.jpg","Joni & Bev",2004)'><img src="thumbnails/joni-bev_04.jpg" border="0"></span></td>
+                <td><span onclick='show("gene-dave_04.jpg","Dave & Gene",2004)'><img src="thumbnails/gene-dave_04.jpg" border="0"></span></td>
+              </tr>
+            </table>
+            <p>We had the chute to ourselves; the photos below show, from the left, the chute from the top, Paul about to go in high, me making a less-than-perfect turn about 1/4 the way down, and Gene resting.</p>
+            <table border="0" cellpadding="2">
+              <tr>
+                <td valign="bottom"><span onclick='show("mainchutefromtop_04.jpg","Looking down Main Chute",2004)'><img src="thumbnails/mainchutefromtop_04.jpg" border="0"></span></td>
+                <td><span onclick='show("paul_04.jpg","Paul",2004)'><img src="thumbnails/paul_04.jpg" border="0"></span></td>
+                <td><span onclick='show("dave_04.jpg","Dave in Main Chute",2004)'><img src="thumbnails/dave_04.jpg" border="0"></span></td>
+                <td><span onclick='show("gene_04.jpg","Gene in Main Chute",2004)'><img src="thumbnails/gene_04.jpg" border="0"></span></td>
+              </tr>
+            </table>
+          </div>
+          <div class="TabbedPanelsContent"><p class='first'>The 2004/5 ski season was one of the best snow years in many seasons. At one point, Alta was reporting a 211&quot; base and over 650&quot; of snowfall. The Baldy Chutes were open many times, from both sides, and I skied Main Chute at least 3 times and Little Chute once. On Mar. 6th, a herd of us hiked up and skied the chutes and then back to Snowbird via the Keyhole; we never rode an Alta lift. These photos were taken by Rick Gardiner.
+            <p>Here's some of the gang at the top of Mt. Baldy. In the left photo are (l-to-r) Christine Gerner, Hania Stawowy, Lala Stawowy, and Joni Borghesani. Di Landau (partially hidden), me, Chris Chads, and Christine are in the middle photo, and that's Joni again in the right photo.</p>
+            <table border="0" cellpadding="2">
+              <tr>
+                <td valign="bottom"><span onclick='show("gang1_05.jpg","Christine, Hania, Lala, Joni",2005)'><img src="thumbnails/gang1_05.jpg" alt="" height="108" width="145" border="0"></span></td>
+                <td valign="bottom"><span onclick='show("gang2_05.jpg","Di, Dave, Chris, Christine",2005)'><img src="thumbnails/gang2_05.jpg" alt="" height="108" width="145" border="0"></span></td>
+                <td><span onclick='show("joni_05.jpg","Joni",2005)'><img src="thumbnails/joni_05.jpg" alt="" height="145" width="108" border="0"></span></td>
+              </tr>
+            </table>
+            <p>Christine and I decided to ski Little Chute, which is a bit steeper and narrower than Main Chute and it curves to the skier's right, but it was smoother. Little Chute is the second slot from the right in <span onclick='show("mainchute_04.jpg","Main Chute",2005)'>this photo</span> and in <span onclick='show("mainchute.jpg","Main Chute",2005)'>this one</span>; the left photo below looks down Little Chute. The rocks on the right side of the entrance spooked me, so I sideslipped past them; Christine didn't notice the rocks and zipped right down the chute. Everyone else skied Main Chute; the second and subsequent photos below show Joni just after sliding in, Karan Bleicher about 1/3 down (on her tele skis!), and a view looking up Main Chute from about 2/3 down.</p>
+            <table border="0" cellpadding="2">
+              <tr>
+                <td valign="bottom"><span onclick='show("little_chute_05.jpg","Little Chute",2005)'><img src="thumbnails/little_chute_05.jpg" alt="" height="108" width="145" border="0"></span></td>
+                <td valign="bottom"><span onclick='show("main_chute_05.jpg","Joni in Main Chute",2005)'><img src="thumbnails/main_chute_05.jpg" alt="" height="108" width="145" border="0"></span></td>
+                <td valign="bottom"><span onclick='show("karan_05.jpg","Karan in Main Chute",2005)'><img src="thumbnails/karan_05.jpg" alt="" height="108" width="145" border="0"></span></td>
+                <td><span onclick='show("lookingup_05.jpg","Looking up Main Chute",2005)'><img src="thumbnails/lookingup_05.jpg" alt="" height="108" width="145" border="0"></span></td>
+              </tr>
+            </table>
+          </div>
+          <div class="TabbedPanelsContent">
+            <p class='first'>On Mar. 22nd, Alta opened both the Alta and Snowbird ridges to the Baldy chutes at the same time. Usually, the Alta side opens first, so the Alta skiers get the best conditions, and the Snowbird side opens a day or two later. We were eager to get semi-fresh tracks in Main Chute; we should've known better. We hiked up through deeper than usual snow in the sun.</p>
+            <p>The photos below show (l-to-r) Wilma Corkery and Joni Borghesani, me, Bev Riedel, and Wilma, Joni, Bev and Bari Levine (who took these photos) on the top of Baldy.</p>
+            <table border="0" cellpadding="2">
+              <tr>
+                <td valign="bottom"><span onclick='show("wilma-joni_06.jpg","Wilma & Joni",2006)'><img src="thumbnails/wilma-joni_06.jpg" alt="" height="145" width="103" border="0"></span></td>
+                <td valign="bottom"><span onclick='show("dave_06.jpg","Dave",2006)'><img src="thumbnails/dave_06.jpg" alt="" height="145" width="109" border="0"></span></td>
+                <td valign="bottom"><span onclick='show("bev_06.jpg","Bev",2006)'><img src="thumbnails/bev_06.jpg" alt="" height="145" width="109" border="0"></span></td>
+                <td valign="bottom"><span onclick='show("red-gang_06.jpg","Wilma, Joni, Bari, Bev",2006)'><img src="thumbnails/red-gang_06.jpg" alt="" height="104" width="145" border="0"></span></td>
+              </tr>
+            </table>
+            <p>We got to the top just in time to ski the Main Chute in the fog. Worse, the chute had been bombed mercilessly and had slid; it was either scraped off or littered with piles of gooey poo. It was awful. I had to stop to knock the snow off my skis because they got too heavy. Luckily, we heard that the Keyhole route back to Snowbird was also awful, so we traversed around Westward Ho. To quote Bari: &quot;There was nothing good about that whole fiasco.&quot;</p>
+          </div>
+        </div>
     </div>
-  </body>
+    </div>
+    <script type="text/javascript">
+<!--
+var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+//-->
+              </script>
+</body>
 
 </html>
