@@ -33,6 +33,7 @@ function show(src, title, id) {
   div.innerHTML = "<center><p>" + title + "</p><img src='images/" + src + "'>" +
 		"<p><span onclick='hide(\"" + id + "\")'>Close</span></p></center>";
   var body = document.getElementById("body");
+  body.style.visibility = "hidden";
   div.style.visibility = "visible";
 }
 
@@ -50,8 +51,8 @@ function hide(id) {
   <body>
     <p class="back"><a href="http://drhanson.net">Back to drhanson.net</a></p>    
     <div id="image"></div>
-  <div id="body">
 	<h2>Skiing Baldy Chutes</h2>
+  <div id="body">
         <p>Click on the thumbnails in the tabs below for larger images.</p>
     <div id="TabbedPanels1" class="TabbedPanels">
         <ul class="TabbedPanelsTabGroup">

@@ -104,7 +104,7 @@
  */
 .TabbedPanelsTabSelected {
 	background-color: inherit;
-	border-bottom: 1px solid #EEE;
+	border-bottom: 1px solid rgb(38,38,38);
 }
 
 /* This selector is an example of how to make a link inside of a tab button
