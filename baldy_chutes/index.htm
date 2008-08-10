@@ -10,7 +10,7 @@
 		<link href="../css/style.css" type="text/css" rel="stylesheet" media="all">
 		<style type="text/css">
 body { color: white; background-color: rgb(38,38,38); margin: 4px 0 0 0 }
-div#body { text-align: left ; width: 724px; margin-right: auto; margin-left: auto; }
+div#pagebody { width: 724px; }
 a:visited, a:link { color: gray }
 div table { margin-left: auto; margin-right: auto }
 span { cursor: pointer; color: gray }
@@ -20,11 +20,13 @@ div#image {
 	margin-right: auto;
 	position: absolute;
 	top: 45px;
-	z-index: 2;
+	z-index: 1;
 	background-color: rgb(38,38,38);
+	visibility: hidden;
 }
 h2 { text-align: center; }
 p.first { margin-top: 2px; }
+.attribution { font-size: 9px; text-align: right; }
 --></style>
 <script type="text/javascript"><!--
 
@@ -32,14 +34,14 @@ function show(src, title, id) {
   var div = document.getElementById("image");
   div.innerHTML = "<center><p>" + title + "</p><img src='images/" + src + "'>" +
 		"<p><span onclick='hide(\"" + id + "\")'>Close</span></p></center>";
-  var body = document.getElementById("body");
+  var body = document.getElementById("pagebody");
   body.style.visibility = "hidden";
   div.style.visibility = "visible";
 }
 
 function hide(id) {
   var div = document.getElementById("image");
-  var body = document.getElementById("body");
+  var body = document.getElementById("pagebody");
   div.style.visibility = "hidden";
   body.style.visibility = "visible";
 }
@@ -52,14 +54,15 @@ function hide(id) {
     <p class="back"><a href="http://drhanson.net">Back to drhanson.net</a></p>    
     <div id="image"></div>
 	<h2>Skiing Baldy Chutes</h2>
-  <div id="body">
-        <p>Click on the thumbnails in the tabs below for larger images.</p>
+    <center>
+  <div id="pagebody">
+        <p style="text-align:left">Click on the thumbnails in the tabs below for larger images.</p>
     <div id="TabbedPanels1" class="TabbedPanels">
         <ul class="TabbedPanelsTabGroup">
-          <li class="TabbedPanelsTab" tabindex="0">2002</li>
-          <li class="TabbedPanelsTab" tabindex="0">2004</li>
-          <li class="TabbedPanelsTab" tabindex="0">2005</li>
-          <li class="TabbedPanelsTab" tabindex="0">2006</li>
+          <li class="TabbedPanelsTab">2002</li>
+          <li class="TabbedPanelsTab">2004</li>
+          <li class="TabbedPanelsTab">2005</li>
+          <li class="TabbedPanelsTab">2006</li>
         </ul>
         <div class="TabbedPanelsContentGroup">
           <div class="TabbedPanelsContent">
@@ -74,12 +77,12 @@ function hide(id) {
                 <td valign="bottom"><span onclick='show("mainchutemiddle.jpg","Looking up Main Chute",2002)'><img src="thumbnails/mainchutemiddle.jpg" height="98" width="145" border="0"></span></td>
                 <td><span onclick='show("mainchutebottom.jpg","Main Chute from Ballroom",2002)'><img src="thumbnails/mainchutebottom.jpg" height="145" width="108" border="0"></span></td>
               </tr>
-              <tr>
-                <td><font size="1">Maylee Noah, 3/28/2002</font></td>
-                <td><font size="1">Maylee Noah, 3/28/2002</font></td>
-                <td><font size="1">Jay Scappini, 3/22/2002</font></td>
-                <td><font size="1">Jay Scappini, 3/22/2002</font></td>
-                <td><font size="1">Maylee Noah, 3/28/2002</font></td>
+              <tr class="attribution">
+                <td>Maylee Noah, 3/28/2002</td>
+                <td>Maylee Noah, 3/28/2002</td>
+                <td>Jay Scappini, 3/22/2002</td>
+                <td>Jay Scappini, 3/22/2002</td>
+                <td>Maylee Noah, 3/28/2002</td>
               </tr>
             </table>
           </div>
@@ -110,7 +113,7 @@ function hide(id) {
               </tr>
             </table>
           </div>
-          <div class="TabbedPanelsContent"><p class='first'>The 2004/5 ski season was one of the best snow years in many seasons. At one point, Alta was reporting a 211&quot; base and over 650&quot; of snowfall. The Baldy Chutes were open many times, from both sides, and I skied Main Chute at least 3 times and Little Chute once. On Mar. 6th, a herd of us hiked up and skied the chutes and then back to Snowbird via the Keyhole; we never rode an Alta lift. These photos were taken by Rick Gardiner.
+          <div class="TabbedPanelsContent"><p class='first'>The 2004/5 ski season was one of the best snow years in many seasons. At one point, Alta was reporting a 211&quot; base and over 650&quot; of snowfall. The Baldy Chutes were open many times, from both sides, and I skied Main Chute at least 3 times and Little Chute once. On Mar. 6th, a herd of us hiked up and skied the chutes and then back to Snowbird via the Keyhole; we never rode an Alta lift. These photos were taken by Rick Gardiner.</p>
             <p>Here's some of the gang at the top of Mt. Baldy. In the left photo are (l-to-r) Christine Gerner, Hania Stawowy, Lala Stawowy, and Joni Borghesani. Di Landau (partially hidden), me, Chris Chads, and Christine are in the middle photo, and that's Joni again in the right photo.</p>
             <table border="0" cellpadding="2">
               <tr>
@@ -144,7 +147,7 @@ function hide(id) {
           </div>
         </div>
     </div>
-    </div>
+    </div></center>
 <script type="text/javascript">
 <!--
 var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1", { defaultTab: 3 });

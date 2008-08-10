@@ -31,7 +31,7 @@
 	padding: 0px;
 	float: left;
 	clear: none;
-	/* width: 100%;  IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
+	width: 100%;  /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
 }
 
 /* This is the selector for the TabGroup. The TabGroup container houses
@@ -146,6 +146,7 @@
  */
 .TabbedPanelsContent {
 	padding: 4px;
+	text-align: left;
 }
 
 /* This selector is an example of how to change the appearnce of the currently
