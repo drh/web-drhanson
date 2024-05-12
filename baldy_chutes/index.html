@@ -16,7 +16,7 @@ div#image {
 	margin-left: auto;
 	margin-right: auto;
 	position: absolute;
-	top: 45px;
+	margin-top: 50px;
 	z-index: 1;
 	background-color: rgb(38,38,38);
 	visibility: hidden;
@@ -31,8 +31,8 @@ table td { padding: 0 0 0 0; vertical-align: bottom;}
 <script>
 function show(src, title, id) {
   var div = document.getElementById("image");
-  div.innerHTML = "<center><p>" + title + "</p><img src='images/" + src + "'>" +
-		"<p><span onclick='hide(\"" + id + "\")'>Close</span></p></center>";
+  div.innerHTML = "<div style=\"text-align: center\"><p>" + title + "</p><img src='images/" + src + "'>" +
+		"<p><span onclick='hide(\"" + id + "\")'>Close</span></p></div>";
   var body = document.getElementById("pagebody");
   body.style.visibility = "hidden";
   div.style.visibility = "visible";
