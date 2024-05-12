@@ -1,0 +1,6 @@
+[submodule "pro"]
+	path = pro
+	url = https://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@github.com/drh/web-drh
+[submodule "chatter_creek"]
+	path = chatter_creek
+	url = https://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@github.com/drh/chatter-creek
