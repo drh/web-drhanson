@@ -1,0 +1,13 @@
+{{ define "main" }}
+    {{ .Content }}
+{{ end }}
+{{ define "title" }}
+    {{- .Title -}}
+{{ end }}
+{{ define "head" }}
+<style media="screen">
+    ul { margin-left: 0; padding-left: 18px; list-style-type: none; list-style-image: none; }
+    li { text-indent: -18px; }
+    body { background-color: #FFFFE8; }
+</style>    
+{{ end }}
