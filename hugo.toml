@@ -3,3 +3,6 @@ languageCode = 'en-us'
 title = 'David R. Hanson'
 uglyURLs = true
 disableKinds = [ "rss", "sitemap", "taxonomy", "term" ]
+enableGitInfo = true
+[frontmatter]
+  lastmod = [ ':fileModTime', ':git', ':default' ]
