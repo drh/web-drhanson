@@ -18,4 +18,4 @@ My professional home page is [here](https://drh.github.io).
 ---
 
 David Hanson / drh at drhanson dot net  
-6/24/2024
+6/27/2024

@@ -1,7 +1,7 @@
-img  { border: none }
-table { margin-left: auto; margin-right: auto; border: 0; border-spacing: 2px;}
-td { vertical-align: top; padding: 2px 2px 2px 2px; width: 110px; height: 110px;}
-.description   { text-align: left; margin-right: auto; margin-left: auto; width: 556px }
-body   { color: white; background-color: #262626; text-align: center }
+img  { border: none; }
+.gallery { display: flex; flex-flow: row wrap; justify-content: left; gap: 14px 10px; }
+.thumb { vertical-align: top; text-align: center; width: 110px; height: 110px; font-size: smaller; }
+.description { text-align: left; margin-right: auto; margin-left: auto; width: 50vw; }
+body { color: white; background-color: #262626; text-align: center; }
 a:visited  { color: gray }
 a:link { color: gray }
