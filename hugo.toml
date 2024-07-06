@@ -2,7 +2,7 @@ baseURL = 'https://drhanson.net/'
 languageCode = 'en-us'
 title = 'David R. Hanson'
 uglyURLs = true
-disableKinds = [ "rss", "sitemap", "taxonomy", "term" ]
+cleanDestinationDir = true
 enableGitInfo = true
 [frontmatter]
   lastmod = [ ':fileModTime', ':git', ':default' ]

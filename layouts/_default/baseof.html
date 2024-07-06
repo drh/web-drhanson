@@ -3,14 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>{{ block "title" . }}{{ end }}</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"> 
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all"> 
     {{ block "head" . }}
     {{ end }}
   </head>
   <body>
+    {{ partial "trace" (dict "page" . "tmpl" "layouts/_default/baseof.html") }}
+    {{ block "header" . }}
+    {{ end}}
     <main>
     {{ block "main" . }}
-      <!-- The part of the page that begins to differ between templates -->
     {{ end -}}
     </main>
   </body>

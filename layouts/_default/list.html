@@ -1,12 +1,7 @@
 {{ define "main" }}
+    {{ partial "trace" (dict "page" . "tmpl" "layouts/_default/list.html") }}
     {{ .Content }}
 {{ end }}
 {{ define "title" }}
     {{- .Title -}}
-{{ end }}
-{{ define "head" }}
-<style>
-    ul { margin-left: 0; padding-left: 0; list-style-type: none; list-style-image: none; }
-    body { background-color: #FFFFE8; }
-</style>    
 {{ end }}

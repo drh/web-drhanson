@@ -1,0 +1,8 @@
+<!-- Call with
+    (dict
+        "tmpl" template paty
+        "page" a regular page ) -->
+<p style="display:none;">
+    {{- with .tmpl -}}{{ . }}{{ end }}
+    {{- with .page.File }} {{ .Path }}{{ end -}}
+</p>

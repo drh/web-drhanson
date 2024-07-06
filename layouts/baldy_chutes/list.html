@@ -1,0 +1,7 @@
+{{ define "main" }}
+    {{ partial "trace" (dict "page" . "tmpl" "layouts/baldy_chutes/list.html") }}
+    {{ .Content }}
+{{ end }}
+{{ define "title" }}
+    {{- .Title -}}
+{{ end }}

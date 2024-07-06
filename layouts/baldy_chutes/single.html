@@ -1,0 +1,10 @@
+{{ define "main" }}
+    {{ partial "trace" (dict "page" . "tmpl" "layouts/baldy_chutes/single.html") }}
+    <h2>{{ .Title }}</h2>
+    <div id="pagebody">
+    {{- .Content }}
+    </div>
+{{ end }}
+{{ define "title" }}
+    {{- .Title -}}
+{{ end }}
