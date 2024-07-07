@@ -2,7 +2,4 @@
     (dict
         "tmpl" template paty
         "page" a regular page ) -->
-<p style="display:none;">
-    {{- with .tmpl -}}{{ . }}{{ end }}
-    {{- with .page.File }} {{ .Path }}{{ end -}}
-</p>
+{{ warnf "%v rendered with %v" .page.File.Path .tmpl }}
