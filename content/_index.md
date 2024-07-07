@@ -3,7 +3,7 @@ title = 'David R. Hanson'
 date = 2024-06-24T14:25:28-06:00
 +++
 
-![Dave](images/drh71.jpg)
+![Dave](drh71.jpg)
 
 My professional home page is [here](https://drh.github.io).
 

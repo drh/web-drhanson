@@ -1,3 +1,1 @@
-{{ with .Get 0 -}}
-    <a href="/baldy_chutes/images/{{ . }}"><img src="/baldy_chutes/thumbnails/{{ . }}" alt=""></a>
-{{- end -}}
+<span onclick='show("images/{{ .Get 0 }}","{{ .Get 1 }}")'><img src="thumbnails/{{ .Get 0 }}" alt=""></span>
