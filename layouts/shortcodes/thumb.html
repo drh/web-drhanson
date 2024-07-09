@@ -1,1 +1,2 @@
-<span onclick='show("images/{{ .Get 0 }}","{{ .Get 1 }}")'><img src="thumbnails/{{ .Get 0 }}" alt=""></span>
+<span onclick='show("images/{{ .Get 0 }}","{{ .Get 1 }}")'>
+    {{- partial "thumbnail" (dict "imagefile" (.Get 0) "resources" .Page.Parent.Resources "size" 145) -}}</span>
