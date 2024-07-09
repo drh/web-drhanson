@@ -5,3 +5,7 @@ img  { border: none; }
 body { color: white; background-color: #262626; text-align: center; }
 a:visited  { color: gray }
 a:link { color: gray }
+.thumbnail { font-size: smaller; text-align: center; vertical-align: bottom; width: 100px; }
+.next, .prev { font-variant: small-caps; width: 60px; display: inline-block; }
+.next { text-align: right; }
+.prev { text-align: left; }

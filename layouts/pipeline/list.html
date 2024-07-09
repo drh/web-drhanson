@@ -1,0 +1,15 @@
+{{ define "main" }}
+    {{ partial "trace" (dict "page" . "tmpl" "layouts/pipeline/list.html") }}
+    <h2>{{ .Title }}</h2>
+    <div class="description">
+        {{ .Content }}
+        <div class="gallery">
+            {{- range .Pages }}
+                <span class="thumb"><a href="{{ .RelPermalink }}"><img src="pipeline/thumbnails/{{ .RelPermalink | path.BaseName }}.jpg"></a><br>{{ .Title }}</span>
+            {{- end }}
+        </div>
+    </div>    
+{{ end }}
+{{ define "title" }}
+    {{- .Title -}}
+{{ end }}

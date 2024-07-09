@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ block "title" . }}{{ end }}</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/pipeline/style.css" rel="stylesheet" type="text/css" media="all">
+    {{ block "head" . }} {{ end -}}
+  </head>
+  <body>
+    {{ partial "trace" (dict "page" . "tmpl" "layouts/pipeline/baseof.html") }}
+    <header>
+    <p class="back"><a href="/">Back to drhanson.net</a></p>
+    </header>
+    <main>
+    {{ block "main" . }}
+    {{ end -}}
+    </main>
+  </body>
+</html>
