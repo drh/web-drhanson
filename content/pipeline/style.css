@@ -1,7 +1,9 @@
+@import "/viewport.css";
+
 img  { border: none; }
 .gallery { display: flex; flex-flow: row wrap; justify-content: left; gap: 10px 10px; }
 .thumb { vertical-align: top; text-align: center; font-size: smaller; }
-.description { text-align: left; margin-right: auto; margin-left: auto; width: 50vw; }
+.description { text-align: left; margin-right: auto; margin-left: auto; }
 body { color: white; background-color: #262626; text-align: center; }
 a:visited  { color: gray }
 a:link { color: gray }

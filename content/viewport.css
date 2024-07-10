@@ -1,0 +1,11 @@
+/* Default */
+.description, .gallery, div#pagebody { width: 50vw; }
+
+/* Small and medium devices (landscape tablets, 992px and down) */
+@media screen and (max-width: 992px) {
+    .description, .gallery, div#pagebody { width: 100vw; }
+}
+/* Large tablets that are <= 1640px wide and in portrait orientation, e.g., iPad Air 5 */
+@media screen and (max-width: 1640px) and (orientation: portrait) {
+    .description, .gallery, div#pagebody { width: 95vw; }
+}
