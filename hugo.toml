@@ -7,3 +7,5 @@ cleanDestinationDir = true
 enableGitInfo = true
 [frontmatter]
   lastmod = [ ':fileModTime', ':git', ':default' ]
+[page]
+  NextPrevInSectionSortOrder = 'asc'

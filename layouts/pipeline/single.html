@@ -1,13 +1,13 @@
 {{ define "main" }}
     {{ partial "trace" (dict "page" . "tmpl" "layouts/pipeline/single.html") }}
     <p>
-    {{- with .NextInSection }}
+    {{- with .PrevInSection }}
         <a href="{{- .RelPermalink | path.Base -}}"><span class="prev">Prev</span></a>
     {{- else }}
         <span class="prev"></span>
     {{- end }}
     <a href="/pipeline.html"><span class="next" style="text-align: center;">Index</span></a>
-    {{ with .PrevInSection}}
+    {{ with .NextInSection}}
         <a href="{{- .RelPermalink | path.Base -}}"><span class="next">Next</span></a>
     {{- else }}
         <span class="next"></span>
