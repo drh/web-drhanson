@@ -3,6 +3,7 @@
 body { color: white; background-color: rgb(38,38,38); margin: 4px 0 0 0 }
 div#pagebody { margin-left: auto; margin-right: auto; }
 a:visited, a:link, .popup { color: gray }
+.popup { text-decoration: underline; }
 span { cursor: pointer; color: white; }
 div#image {
 	width: 100%;
@@ -20,7 +21,7 @@ p.first { margin-top: 2px; }
 img { border: 0;}
 .gallery { display: flex; flex-flow: row wrap; justify-content: center; gap: 10px 10px;
     align-items: end; text-align: right; font-size: 60%; }
-nav.navigation { font-size: smaller; font-family: sans-serif; display: flex; gap: 1em;
+nav { font-size: smaller; font-family: sans-serif; display: flex; gap: 1em;
     justify-content: center; margin-top: 3ex;
-    a { text-decoration: none; }
 }
+nav > a { text-decoration: none; }

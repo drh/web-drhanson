@@ -11,7 +11,7 @@
     {{ partial "trace" (dict "page" . "tmpl" "layouts/baldy_chutes/baseof.html") }}
     <header>
     <p class="back"><a href="/">Back to drhanson.net</a></p>
-    <nav class="navigation">
+    <nav>
     {{- range (site.GetPage "/baldy_chutes.html").Pages.ByTitle }}
         <a href="{{ .RelPermalink }}">{{ .RelPermalink | path.BaseName }}</a>
     {{- end }}
