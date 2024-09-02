@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    a {
+        @apply text-gray-600;
+    }
+    hr {
+        @apply border-black;
+    }
+    p {
+        @apply my-3;
+    }
+  }
+  @layer utilities {
+    .small-caps {
+      font-variant: small-caps;
+    }
+  }
+  

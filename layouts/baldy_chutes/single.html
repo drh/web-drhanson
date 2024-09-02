@@ -1,13 +1,29 @@
 {{ define "main" }}
     {{ partial "trace" (dict "page" . "tmpl" "layouts/baldy_chutes/single.html") }}
-    <div id="image"></div>
-    <h2>{{ .Title }}</h2>
+    <h2 class="text-lg text-center">{{ .Title }}</h2>
+    <!-- The Modal -->
+    <div id="modal" class="z-10 text-center hidden flex-col gap-y-3 content-center overflow-visible">
+        <span id="modal-title" class="pt-4">Title</span>
+        <img id="modal-img" src="images/baldy.jpg">
+        <span class="small-caps cursor-pointer" onclick="hide()">Close</span>
+    </div>
     <div id="pagebody">
     {{- .Content }}
     </div>
 {{ end }}
 {{ define "head" -}}
-    <script src="popup.js"></script>
+    <script>
+    function show(src, title) {
+        document.getElementById("modal-img").src = src;
+        document.getElementById("modal-title").innerHTML = title;
+        document.getElementById("modal").style.display = "flex";
+        document.getElementById("pagebody").style.visibility = "hidden";
+      }      
+      function hide() {
+        var modal = document.getElementById("modal").style.display = "none";
+        document.getElementById("pagebody").style.visibility = "visible";
+      }
+    </script>
 {{ end -}}
 {{ define "title" }}
     {{- .Title -}}

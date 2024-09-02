@@ -2,22 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/output.css" rel="stylesheet" type="text/css" media="all">
     <title>{{ block "title" . }}{{ end }}</title>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
-    <link href="style.css" rel="stylesheet" type="text/css" media="all">
     {{ block "head" . }} {{ end -}}
   </head>
-  <body>
+  <body class="bg-black font-serif text-white text-base/5 p-1">
     {{ partial "trace" (dict "page" . "tmpl" "layouts/baldy_chutes/baseof.html") }}
     <header>
-    <p class="back"><a href="/">Back to drhanson.net</a></p>
-    <nav>
+    <span class="absolute top-1 right-1 text-sm"><a href="/">Back to drhanson.net</a></span>
+    <nav class="flex flex-row flex-wrap gap-4 justify-center items-end font-sans text-sm my-3">
     {{- range (site.GetPage "/baldy_chutes.html").Pages.ByTitle }}
         <a href="{{ .RelPermalink }}">{{ .RelPermalink | path.BaseName }}</a>
     {{- end }}
     </nav>
     </header>
-    <main>
+    <main class="xl:w-6/12 mx-auto">
     {{ block "main" . }}
     {{ end -}}
     </main>

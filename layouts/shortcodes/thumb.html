@@ -1,3 +1,3 @@
-<span onclick='show("images/{{ .Get 0 }}","{{ .Get 1 }}")'>
+<span class="text-[60%] leading-none cursor-pointer" onclick='show("images/{{ .Get 0 }}","{{ .Get 1 }}")'>
     {{- partial "thumbnail" (dict "imagefile" (.Get 0) "resources" .Page.Parent.Resources "size" 145) -}}
     {{- with (.Get 2) }}<br>{{ . }}{{ end }}</span>
