@@ -1,10 +1,10 @@
 {{ define "main" }}
     {{ partial "trace" (dict "page" . "tmpl" "layouts/baldy_chutes/single.html") }}
-    <h2 class="text-lg text-center">{{ .Title }}</h2>
+    <h2 class="font-bold text-xl text-center">{{ .Title }}</h2>
     <!-- The Modal -->
     <div id="modal" class="z-10 text-center hidden flex-col gap-y-3 content-center overflow-visible">
         <span id="modal-title" class="pt-4">Title</span>
-        <img id="modal-img" src="images/baldy.jpg">
+        <span class="flex justify-center"><img id="modal-img" src="images/baldy.jpg"></span>
         <span class="small-caps cursor-pointer" onclick="hide()">Close</span>
     </div>
     <div id="pagebody">
@@ -20,7 +20,7 @@
         document.getElementById("pagebody").style.visibility = "hidden";
       }      
       function hide() {
-        var modal = document.getElementById("modal").style.display = "none";
+        document.getElementById("modal").style.display = "none";
         document.getElementById("pagebody").style.visibility = "visible";
       }
     </script>

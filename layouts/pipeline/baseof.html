@@ -2,17 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/output.css" rel="stylesheet" type="text/css" media="all">
     <title>{{ block "title" . }}{{ end }}</title>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/pipeline/style.css" rel="stylesheet" type="text/css" media="all">
     {{ block "head" . }} {{ end -}}
   </head>
-  <body>
+  <body class="bg-black font-serif text-white text-base/5 p-1">
     {{ partial "trace" (dict "page" . "tmpl" "layouts/pipeline/baseof.html") }}
     <header>
-    <p class="back"><a href="/">Back to drhanson.net</a></p>
+    <span class="absolute top-1 right-1 text-sm"><a href="/">Back to drhanson.net</a></span>
     </header>
-    <main>
+    <main class="xl:w-2/4 mx-auto">
     {{ block "main" . }}
     {{ end -}}
     </main>

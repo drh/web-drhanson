@@ -1,23 +1,22 @@
 {{ define "main" }}
     {{ partial "trace" (dict "page" . "tmpl" "layouts/pipeline/single.html") }}
-    <p>
+    <p class="text-center">
     {{- with .PrevInSection }}
-        <a href="{{- .RelPermalink | path.Base -}}"><span class="prev">Prev</span></a>
+        <a href="{{- .RelPermalink | path.Base -}}"><span class="small-caps inline-block w-16 text-left">Prev</span></a>
     {{- else }}
-        <span class="prev"></span>
+        <span class="inline-block w-16"></span>
     {{- end }}
-    <a href="/pipeline.html"><span class="next" style="text-align: center;">Index</span></a>
+    <a href="/pipeline.html"><span class="inline-block small-caps w-16 text-center">Index</span></a>
     {{ with .NextInSection}}
-        <a href="{{- .RelPermalink | path.Base -}}"><span class="next">Next</span></a>
+        <a href="{{- .RelPermalink | path.Base -}}"><span class="inline-block small-caps w-16 text-right">Next</span></a>
     {{- else }}
-        <span class="next"></span>
+        <span class="inline-block w-16"></span>
     {{- end -}}
     </p>
-    <h2>{{ .Title }}</h2>
-    <img src="{{ path.Join "images" (.Path | path.BaseName) }}.jpg" alt="">
-    <div class="description">
-        {{ .Content }}
-    </div>
+    <h2 class="font-bold text-xl text-center my-4">{{ .Title }}</h2>
+    <span class="flex justify-center">
+        <img src="{{ path.Join "images" (.Path | path.BaseName) }}.jpg" alt=""></span>
+    {{ .Content }}
 {{ end }}
 {{ define "title" }}
     {{- .Title -}}

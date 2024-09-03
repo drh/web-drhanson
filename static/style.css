@@ -1,6 +1,0 @@
-.floatright { float: right; padding-left: 12px; }
-.floatleft { float: left; padding-right: 12px; }
-.smallcaps { color: fuchsia; font-size: smaller; font-weight: bold; text-transform: uppercase; }
-.back { margin-top: 0px; font-size: smaller; text-align: right; position: absolute; z-index: 1; top: 2px; right: 4px; }
-ul { margin-left: 0; padding-left: 0; list-style-type: none; list-style-image: none; }
-body { font-size: 14pt; background-color: #FFFFE8; }

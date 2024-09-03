@@ -1,14 +1,15 @@
 {{ define "main" }}
     {{ partial "trace" (dict "page" . "tmpl" "layouts/pipeline/list.html") }}
-    <h2>{{ .Title }}</h2>
+    <h2 class="font-bold text-xl text-center mt-4">{{ .Title }}</h2>
     <div class="description">
         {{ .Content }}
         {{ $resources := .Resources }}
-        <div class="gallery">
+        <div class="flex flex-row flex-wrap gap-[10px] justify-items-center">
             {{- range .Pages }}
-            <span class="thumb"><a href="{{ .RelPermalink }}">
-                    {{- partial "thumbnail" (dict "imagefile" (printf "%s.jpg" (.RelPermalink | path.BaseName)) "resources" $resources "size" 100) -}}
-                    </a><br>{{ .Title }}</span>
+                <span class="align-top text-xs leading-none cursor-pointer text-center"><a href="{{ .RelPermalink }}">
+                    <div class="flex justify-center">
+                        {{- partial "thumbnail" (dict "imagefile" (printf "%s.jpg" (.RelPermalink | path.BaseName)) "resources" $resources "size" 100) -}}
+                    </div></a><br>{{ .Title }}</span>
             {{- end }}
         </div>
     </div>    
