@@ -1,7 +1,0 @@
-{{ define "main" }}
-    {{ partial "trace" (dict "page" . "tmpl" "layouts/_default/single.html") }}
-    {{ .Content }}
-{{ end }}
-{{ define "title" }}
-    {{- .Title -}}
-{{ end }}

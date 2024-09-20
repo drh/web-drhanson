@@ -9,3 +9,7 @@ enableGitInfo = true
   lastmod = [ ':fileModTime', ':git', ':default' ]
 [page]
   NextPrevInSectionSortOrder = 'asc'
+[module]
+  [[module.imports]]
+    path = "github.com/drh/hugo-utilities"
+theme = [ "hugo-utilities" ]
