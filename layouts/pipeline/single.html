@@ -15,7 +15,7 @@
     </div>
     <h2 class="font-bold text-xl text-center my-4">{{ .Title }}</h2>
     <span class="flex justify-center">
-        <img src="{{ path.Join "images" (.Path | path.BaseName) }}.jpg" alt=""></span>
+        <img src="{{ path.Join "images" (.Path | path.BaseName) }}.jpg" alt></span>
     {{ .Content }}
 {{ end }}
 {{ define "title" }}

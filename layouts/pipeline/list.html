@@ -8,11 +8,14 @@
             {{- range .Pages }}
                 <span class="align-top text-xs leading-none cursor-pointer text-center"><a href="{{ .RelPermalink }}">
                     <div class="flex justify-center">
-                        {{- partial "thumbnail" (dict "imagefile" (printf "%s.jpg" (.RelPermalink | path.BaseName)) "resources" $resources "size" 100) -}}
+                        {{- with partial "thumbnail" (dict "path" (printf "images/%s.jpg" (.RelPermalink | path.BaseName))
+                            "resources" $resources "size" 100) -}}
+                            <img src="{{ .RelPermalink }}" alt>
+                        {{- end -}}
                     </div></a><br>{{ .Title }}</span>
             {{- end }}
         </div>
-    </div>    
+    </div>
 {{ end }}
 {{ define "title" }}
     {{- .Title -}}
