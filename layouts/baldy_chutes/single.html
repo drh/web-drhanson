@@ -5,7 +5,7 @@
     <div id="modal" class="z-10 text-center hidden flex-col gap-y-3 content-center overflow-visible">
         <span id="modal-title" class="pt-4">Title</span>
         <span class="flex justify-center"><img id="modal-img" src="images/baldy.jpg"></span>
-        <span class="small-caps cursor-pointer" onclick="hide()">Close</span>
+        <span class="cursor-pointer flex justify-center" onclick="hide()">{{ partial "close-40" }}</span>
     </div>
     <div id="pagebody">
     {{- .Content }}

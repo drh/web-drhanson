@@ -1,15 +1,15 @@
 {{ define "main" }}
     {{ partial "trace" (dict "page" . "tmpl" "layouts/pipeline/single.html") }}
-    <div class="grid grid-cols-[repeat(3,4rem)] justify-center items-end mt-3 small-caps">
+    <div class="mt-4 grid grid-cols-[repeat(3,4rem)] justify-center justify-items-center">
     <span class="text-left">
     {{- with .PrevInSection -}}
-        <a href="{{- .RelPermalink | path.Base -}}">Prev</a>
+        <a href="{{- .RelPermalink | path.Base -}}">{{- partial "back-arrow-40" }}</a>
     {{- end -}}
     </span>
-    <span class="text-center"><a href="/pipeline.html">Index</a></span>
+    <span class="text-center"><a href="/pipeline.html">{{- partial "up-arrow-40" }}</a></span>
     <span class="text-right">
     {{- with .NextInSection -}}
-        <a href="{{- .RelPermalink | path.Base -}}">Next</a>
+        <a href="{{- .RelPermalink | path.Base -}}">{{- partial "forward-arrow-40" }}</a>
     {{- end -}}
     </span>
     </div>

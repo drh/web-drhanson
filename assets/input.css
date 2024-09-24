@@ -12,10 +12,7 @@
     p {
         @apply my-3;
     }
-  }
-  @layer utilities {
-    .small-caps {
-      font-variant: small-caps;
+    svg {
+        @apply fill-white
     }
-  }
-  
+}

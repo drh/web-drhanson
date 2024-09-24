@@ -461,6 +461,10 @@ p {
   margin-bottom: 0.75rem;
 }
 
+svg {
+  fill: #fff;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -606,10 +610,6 @@ p {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
 }
 
 .mt-4 {
@@ -792,13 +792,8 @@ p {
   text-decoration-line: underline;
 }
 
-.small-caps {
-  font-variant: small-caps;
-}
-
 @media (min-width: 1280px) {
   .xl\:w-2\/4 {
     width: 50%;
   }
 }
-  
