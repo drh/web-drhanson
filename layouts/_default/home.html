@@ -1,3 +1,11 @@
+{{ define "head"}}
+<style>
+a {
+    text-decoration-line: underline;
+    color: rgb(79 70 229 / 1) /* #4f46e5 */;
+}
+</style>
+{{ end }}
 {{ define "main" }}
 {{ partial "trace" (dict "page" . "tmpl" "layouts/_default/home.html") }}
     {{ .Content }}
