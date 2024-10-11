@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/output.css" rel="stylesheet" type="text/css" media="all">
+    {{ with resources.Get "style.css" -}}
+    <link href="{{ .RelPermalink }}" rel="stylesheet" type="text/css" media="all">
+    {{ end -}}
     <title>{{ block "title" . }}{{ end }}</title>
     {{ block "head" . }}
     {{ end }}
@@ -11,7 +13,7 @@
   <body class="bg-yellow-50 font-serif text-base/5 p-1">
     {{ partial "trace" (dict "page" . "tmpl" "layouts/_default/baseof.html") }}
     {{ block "header" . }}
-    {{ end}}
+    {{ end  }}
     <main class="space-y-3">
     {{ block "main" . }}
     {{ end -}}

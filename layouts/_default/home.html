@@ -1,4 +1,4 @@
-{{ define "head"}}
+{{ define "head" }}
 <style>
 a {
     text-decoration-line: underline;
@@ -7,7 +7,7 @@ a {
 </style>
 {{ end }}
 {{ define "main" }}
-{{ partial "trace" (dict "page" . "tmpl" "layouts/_default/home.html") }}
+    {{ partial "trace" (dict "page" . "tmpl" "layouts/_default/home.html") }}
     {{ .Content }}
 {{ end }}
 {{ define "title" }}
