@@ -787,7 +787,7 @@ svg {
   text-decoration-line: underline;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1080px) {
   .xl\:w-2\/4 {
     width: 50%;
   }
