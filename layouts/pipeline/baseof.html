@@ -11,8 +11,8 @@
   </head>
   <body class="bg-black font-serif text-white text-base/5 p-1">
     {{ partial "trace" (dict "page" . "tmpl" "layouts/pipeline/baseof.html") }}
-    <header>
-    <span class="absolute top-1 right-1 text-sm"><a href="/">Back to drhanson.net</a></span>
+    <header class="w-full inline-flex ml-auto justify-end text-sm">
+    <a href="/">Back to drhanson.net</a>
     </header>
     <main class="xl:w-2/4 mx-auto">
     {{ block "main" . }}

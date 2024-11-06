@@ -1,6 +1,6 @@
 {{ define "main" }}
     {{ partial "trace" (dict "page" . "tmpl" "layouts/pipeline/list.html") }}
-    <h2 class="font-bold text-xl text-center mt-4">{{ .Title }}</h2>
+    <h2 class="font-bold text-xl text-center">{{ .Title }}</h2>
     <div class="description">
         {{ .Content }}
         {{ $resources := .Resources }}

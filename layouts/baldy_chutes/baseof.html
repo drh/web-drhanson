@@ -11,13 +11,14 @@
   </head>
   <body class="bg-black font-serif text-white text-base/5 p-1">
     {{ partial "trace" (dict "page" . "tmpl" "layouts/baldy_chutes/baseof.html") }}
-    <header>
-    <span class="absolute top-1 right-1 text-sm"><a href="/">Back to drhanson.net</a></span>
-    <nav class="flex flex-row flex-wrap gap-4 justify-center items-end font-sans text-sm my-3">
+    <header class="w-full inline-grid gap-2 grid-cols-3 justify-around text-sm">
+    <span></span> 
+    <nav class="inline-flex gap-4 content-center justify-center items-end font-sans">
     {{- range (site.GetPage "/baldy_chutes.html").Pages.ByTitle }}
         <a href="{{ .RelPermalink }}">{{ .RelPermalink | path.BaseName }}</a>
     {{- end }}
     </nav>
+    <span class="text-right"><a href="/">Back to drhanson.net</a></span>
     </header>
     <main class="xl:w-2/4 mx-auto">
     {{ block "main" . }}

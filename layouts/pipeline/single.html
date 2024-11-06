@@ -1,6 +1,6 @@
 {{ define "main" }}
     {{ partial "trace" (dict "page" . "tmpl" "layouts/pipeline/single.html") }}
-    <div class="mt-4 grid grid-cols-[repeat(3,4rem)] justify-center justify-items-center">
+    <div class="grid grid-cols-[repeat(3,4rem)] justify-center justify-items-center">
     <span class="text-left">
     {{- with .PrevInSection -}}
         <a href="{{- .RelPermalink | path.Base -}}">{{- partial "back-arrow-40" }}</a>
@@ -13,7 +13,7 @@
     {{- end -}}
     </span>
     </div>
-    <h2 class="font-bold text-xl text-center my-4">{{ .Title }}</h2>
+    <h2 class="font-bold text-xl text-center my-2">{{ .Title }}</h2>
     <span class="flex justify-center">
         <img src="{{ path.Join "images" (.Path | path.BaseName) }}.jpg" alt></span>
     {{ .Content }}
