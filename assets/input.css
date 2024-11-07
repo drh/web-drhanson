@@ -4,7 +4,7 @@
 
 @layer base {
     a {
-        @apply text-gray-600;
+        @apply text-[#778899];
     }
     hr {
         @apply border-black;
