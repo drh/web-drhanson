@@ -1,5 +1,4 @@
 public/
 resources/
 assets/style.css
-.DS_Store
 .hugo_build.lock
