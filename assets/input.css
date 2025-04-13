@@ -5,7 +5,7 @@
         @apply text-[#778899];
     }
     hr {
-        @apply border-color: var(--color-black); /* #000 */
+        color: var(--color-black); /* #000 */
     }
     p {
         @apply my-3;
