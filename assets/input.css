@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@source not "../public";
+@source "hugo_stats.json";
 
 @theme {
     --breakpoint-xl: 1080px;

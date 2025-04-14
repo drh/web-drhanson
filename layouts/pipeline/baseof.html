@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{ with resources.Get "style.css" -}}
-    <link href="{{ .RelPermalink }}" rel="stylesheet" type="text/css" media="all">
-    {{ end -}}
+    {{ partialCached "css.html" . -}}
     <title>{{ block "title" . }}{{ end }}</title>
     {{ block "head" . }} {{ end -}}
   </head>
