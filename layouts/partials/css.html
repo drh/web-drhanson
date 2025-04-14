@@ -1,0 +1,7 @@
+{{ with (templates.Defer (dict "key" "global")) }}
+  {{- with resources.Get "input.css" }}
+    {{- with . | css.TailwindCSS -}}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ end -}}
+  {{ end -}}
+{{ end -}}
