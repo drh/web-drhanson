@@ -1,4 +1,11 @@
 @import "tailwindcss";
+@source not "../public";
+
+@theme {
+    --breakpoint-xl: 1080px;
+    --font-serif: "Times New Roman", Times, ui-serif, Georgia, Cambria, serif;
+    --font-sans: ui-sans-serif, system-ui, "Arial", sans-serif;
+}
 
 @layer base {
     a {
