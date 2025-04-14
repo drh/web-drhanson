@@ -3,6 +3,5 @@
 # Install Tailwind CSS and Tailwind CLI
 npm install tailwindcss @tailwindcss/cli
 
-# Generate style.css and run Hugo
-npx @tailwindcss/cli -i assets/input.css -o assets/style.css
+# Run Hugo
 hugo build
