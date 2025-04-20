@@ -4,3 +4,5 @@ github.com/drh/hugo-utilities v0.0.0-20240922033839-24c82e747bec h1:812JqZddBtzY
 github.com/drh/hugo-utilities v0.0.0-20240922033839-24c82e747bec/go.mod h1:qL7qv3MRA6HlKzfGkx39yvo+AEY5xU9tMYxS1v9+xTk=
 github.com/drh/hugo-utilities v0.0.0-20240924193327-630b4e3dac8e h1:svf8IoKorvIbyDNkwnUMf3hNZj2RS8CjqvVvce6YVGU=
 github.com/drh/hugo-utilities v0.0.0-20240924193327-630b4e3dac8e/go.mod h1:qL7qv3MRA6HlKzfGkx39yvo+AEY5xU9tMYxS1v9+xTk=
+github.com/drh/hugo-utilities v0.0.0-20250420184749-c5438186d461 h1:tGgJ5z1wqS5zVNbDHvyAph3kxBR03dnY2AaDCVN1DPQ=
+github.com/drh/hugo-utilities v0.0.0-20250420184749-c5438186d461/go.mod h1:qL7qv3MRA6HlKzfGkx39yvo+AEY5xU9tMYxS1v9+xTk=

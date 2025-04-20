@@ -1,5 +1,5 @@
 {{ define "main" }}
-    {{ partial "trace" (dict "page" . "tmpl" "layouts/pipeline/single.html") }}
+    {{ partial "trace" . }}
     <div class="grid grid-cols-[repeat(3,4rem)] justify-center justify-items-center">
     <span class="text-left">
     {{- with .PrevInSection -}}
