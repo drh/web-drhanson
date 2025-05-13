@@ -1,5 +1,5 @@
 {{ define "main" }}
-    {{ partial "trace" (dict "page" . "tmpl" "layouts/baldy_chutes/single.html") }}
+    {{ partial "trace" . }}
     <h2 class="font-bold text-xl text-center">{{ .Title }}</h2>
     <!-- The Modal -->
     <div id="modal" class="z-10 text-center hidden flex-col gap-y-3 content-center overflow-visible">
